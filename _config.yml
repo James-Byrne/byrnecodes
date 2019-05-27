@@ -1,0 +1,17 @@
+title: Byrnecodes | Ember & Elixir consulting
+description: Ember & Elixir consulting
+email: 'james@byrnecodes.com'
+twitter_username: '@jamesdesbyrne'
+github_username: 'james-byrne'
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - gulpfile.babel.js
+  - LICENSE.md
+  - node_modules
+  - package.json
+  - package-lock.json
+  - README.md
+  - src
+  - tailwind.config.js

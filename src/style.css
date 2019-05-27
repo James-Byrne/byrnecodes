@@ -1,0 +1,17 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+body {
+  font-family: 'Roboto', sans-serif;;
+}
+
+.font-mono {
+  font-family: 'Ubuntu Mono', monospace;
+}
+
+.-right-7 {
+  right: -7rem;
+}
