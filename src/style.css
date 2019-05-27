@@ -11,7 +11,37 @@ body {
 .font-mono {
   font-family: 'Ubuntu Mono', monospace;
 }
+.font-condensed {
+  font-family: 'Roboto Condensed', monospace;
+}
 
 .-right-7 {
   right: -7rem;
+}
+
+.hover\:nudge-u-sm:hover {
+  transform: translateY(-2px);
+}
+.hover\:shadow-picked-up:hover {
+  box-shadow: 0 30px 60px -12px rgba(50,50,93,.25), 0 18px 36px -18px rgba(0,0,0,.3);
+}
+
+.hover\:nudge-u-sm:hover {
+  transform: translateY(-2px);
+}
+.hover\:shadow-picked-up:hover {
+  box-shadow: 0 30px 60px -12px rgba(50,50,93,.25), 0 18px 36px -18px rgba(0,0,0,.3);
+}
+
+.transition {
+  transition: all .15s;
+}
+
+.border-ember { border-color: #E04E39; }
+.bg-ember { background-color: #E04E39; }
+.bg-gray-900 { background-color: #3A3D3D; }
+
+.clip-right-side {
+  -webkit-clip-path: polygon(0 0, 100% 0, 95% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 95% 100%, 0 100%);
 }
