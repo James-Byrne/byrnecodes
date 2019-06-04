@@ -45,3 +45,14 @@ body {
   -webkit-clip-path: polygon(0 0, 100% 0, 95% 100%, 0 100%);
   clip-path: polygon(0 0, 100% 0, 95% 100%, 0 100%);
 }
+
+.blog-post-title-image {
+  background-size: cover;
+  width: 100%;
+  height: 20rem;
+  resize: both;
+  position: absolute;
+}
+.ember-retro {
+  background-image: url('/assets/img/blog-posts/ember-retro.jpg');
+}
