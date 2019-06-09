@@ -4,6 +4,8 @@ email: 'james@byrnecodes.com'
 twitter_username: '@jamesdesbyrne'
 github_username: 'james-byrne'
 
+highlighter: rouge
+
 exclude:
   - Gemfile
   - Gemfile.lock
