@@ -51,11 +51,11 @@ layout: default
   </div>
 </div>
 
-<div class="flex flex-col sm:flex-row items-center justify-center bg-ember p-4">
-  <span class="max-w-md text-lg sm:text-sm text-white text-center sm:text-left">Want to hear more of my thoughts, drop me your email and I’ll send them your way!</span>
-  <input class="px-3 py-2 sm:py-1 rounded shadow-lg ml-6 w-64 mt-4 sm:mt-0" placeholder="email"/>
+<form action="https://formspree.io/james@byrnecodes.com" method="POST" class="flex flex-col sm:flex-row items-center justify-center bg-ember p-4">
+ <span class="max-w-md text-lg sm:text-sm text-white text-center sm:text-left">Want to hear more of my thoughts, drop me your email and I’ll send them your way!</span>
+  <input class="px-3 py-2 sm:py-1 rounded shadow-lg ml-6 w-64 mt-4 sm:mt-0" type="email" name="email" placeholder="email" required="true"/>
   <button class="bg-gray-900 rounded text-white ml-4 mt-4 sm:mt-0 px-4 py-2 sm:py-1 transition hover:nudge-u-sm hover:shadow-picked-up">Submit</button>
-</div>
+</form>
 
 <div class="max-w-sm mx-auto py-12 text-center">
   <h2 class="font-mono text-2xl mb-6">Need advice or have a cool idea? Get in touch</h2>
