@@ -1,8 +1,8 @@
 ---
 layout: blog_post
-title: "Ember, A Retrospective"
+title: "A Retrospective on Ember"
 image: "/assets/img/blog-posts/ember-retro.jpg"
-description: "My thoughts on Emberjs, it's strengths and where I hope they goes next"
+description: "My thoughts on Ember, it's strengths and where I hope they goes next"
 ---
 
 # A Retrospective

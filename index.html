@@ -44,11 +44,11 @@ layout: default
   <h2 class="font-mono text-4xl text-center mb-12">Thoughts on Things</h2>
 
   <div class="flex flex-col md:flex-row justify-center">
-    {% for post in site.posts reversed limit: 4 %}
-      <a href="{{ post.url }}" class="shadow-lg rounded overflow-hidden transition hover:nudge-u-sm hover:shadow-picked-up mx-auto md:mx-3 w-full max-w-xs mt-4 md:mt-0 border-r-lg border border-grey-light">
-        <img src="{{ post.image }}" class="w-full" height="140"/>
-        <h3 class="text-xl font-condensed p-2 text-black no-underline">{{ post.title }}</h3>
-        <p class="p-2 text-black no-underline">{{ post.description }}</p>
+    {% for post in site.posts limit: 4 %}
+      <a href="{{ post.url }}" class="shadow-lg rounded-lg overflow-hidden transition hover:nudge-u-sm hover:shadow-picked-up mx-auto md:mx-3 max-w-xxs mt-4 md:mt-0 border-r-lg border border-grey-light">
+        <div style="height: 140px; width: 100%; background-image: url({{ post.image }}); background-size: cover"></div>
+        <h3 class="text-xl font-condensed p-2 pb-1 text-gray-900">{{ post.title }}</h3>
+        <p class="px-2 pb-2 text-sm text-gray-600">{{ post.description }}</p>
       </a>
     {% endfor %}
   </div>

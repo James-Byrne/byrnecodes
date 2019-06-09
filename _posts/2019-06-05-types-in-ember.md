@@ -6,9 +6,9 @@ description: "So you’ve decided to look into adding Typescript to your Ember p
 ---
 
 # Static Types in EmberJs?
-So you’ve decided to look into adding Typescript to your Ember project. You’ve heard of all the benefits Static Typing will bring you and how it will deliver unto you a more maintainable codebase than plain ol’ javascript (couldn’t be that hard right?).
+So you’ve decided to add Typescript to your Ember project. You’ve heard all about the benefits of Static Typing and how it will deliver a more maintainable codebase than plain ol’ javascript (couldn’t be that hard right?).
 
-Well before you dive in headfirst there are a few things I’d recommend you consider. After all, this is a change to your underlying programming language (yes I know it’s a superset, more on that later) so some pros and cons are to be expected. But to start of positive, let’s look at some of the upsides first.
+Well before you dive in head first there are a few points I’d recommend you consider. After all, this is a change to your underlying programming language (yes I know it’s a superset and more on that later) so some pros and cons are to be expected. But to start of positive, let’s look at some of the upsides first.
 
 > Note I will not be discussing Classes or decorators much in this doc, if you want an intro to them I highly recommend [this post](https://www.pzuraq.com/coming-soon-in-ember-octane-part-1-native-classes/) by [pzuraq](https://www.pzuraq.com).
 
@@ -22,11 +22,9 @@ Well before you dive in headfirst there are a few things I’d recommend you con
 
 > This is now my favourite meme ever
 
-Probably the most talked about benefit of Typescript is its Static Types. These essentially allow us to specify what king of value we expect from a particular parameter, whether it’s a string, an integer, both or neither. This allows the Typescript compiler to catch a number of potential bugs before we come across them either in development or production.
+Probably the most talked about feature of Typescript is its Static Types which we can use to specify the type of value we expect from a paramter/variable. This in turn gives the Typescript compiler the ability to catch common errors in the compile step, reducing the number of bugs that make it to production.
 
-A simple example of this would be parsing some data structure. Let’s say we are parsing an error but that the error can take a number of shapes. It can be a string or an object containing a list of errors.
-
-If we wanted to just extract all the errors from some error we’ll need to write a function that can handle all these cases. A potential solution would look something like this:
+An example of this would be parsing some data structure. Let’s say we are parsing an error but that the error can take a number of shapes. It can be a string or an object containing a list of strings. A potential solution might look something like this:
 
 ```js
 function getAllErrors(error = {}) {
@@ -37,9 +35,11 @@ function getAllErrors(error = {}) {
 }
 ```
 
-This looks good at first glance, we take in an error, check it’s types and if it matches what we want we return it, otherwise we return an empty list. However there is an error here, if `error` is passed as `null` it will fail the first `if` statement but pass the later (because of course `typeof null === ‘object` ….).
+This looks good at first glance, we take in an error, check it’s types and if it matches what we want we return it, otherwise we return an empty list. However there is an bug here, if `error` is passed as `null` it will fail the first `if` statement but pass the later.
 
-Obviously that is not what we want. Luckily Typescript (Static Typing) will help us catch this error. Let’s start by writing the types (something you should always do first).
+> because of course `typeof null === 'object'` ….
+
+Obviously that is not what we want. Luckily Static Typing will catch this error. Let’s start by writing the types (something you should always do first).
 
 ```ts
 type ErrorMessage = string;
@@ -62,7 +62,7 @@ function getAllErrors(error: PotentialError): Array<ErrorMessage> {
 }
 ```
 
-But wait! What are those new functions? `isErrorMessage` and `isError`? Well those are type guards. They allow you to tell the typescript compiler what type is being returned. So for instance the `isError` type guard could look like this:
+Much nicer! But wait! What are those new functions? `isErrorMessage` and `isError`? Well those are type guards. They allow you to tell the typescript compiler what type is being returned. So for instance the `isError` type guard could look like this:
 
 ```ts
 function isError(error: PotentialError): error is Error {
@@ -79,9 +79,7 @@ if (isError(error)) return error.errors[0];
 // Type string is not assignable to type string[]
 ```
 
-This is a big win for maintainability, it allows us to be really sure what to expect from functions we have written and more importantly ones which we did not. You could argue it added a lot of boiler plate (which is not inherently bad to begin with) but it made our implementation clearer and allowed us to eliminate a set of bugs that are very hard to test for.
-
-> Notice as well how clear the implementation is, just by reading the names and the types we can tell immediately _what_ is being done within the function
+This is a big win for maintainability because we know exactly what to expect from functions we have written and more importantly ones we didn't.
 
 
 ### Documentation
@@ -89,18 +87,18 @@ Notice as well how clear the implementation of our example function is now. Prev
 
 ```js
 /* @method getAllErrors/1
-* @return List(Object)
-*
-* If it is a simple error (a
-* string) then that will be returned as
-* the expected return type.
-*
-* If a list of errors are found within
-* the object they will be returned.
-*
-* If it is not a string or an object we
-* will return an empty list.
-*/
+ * @return List(Object)
+ *
+ * If it is a simple error (a
+ * string) then that will be returned as
+ * the expected return type.
+ *
+ * If a list of errors are found within
+ * the object they will be returned.
+ *
+ * If it is not a string or an object we
+ * will return an empty list.
+ */
 function getAllErrors(error = {}) {
   if (typeof error === 'string') return [error];
   if (typeof error === 'object') return error.errors;
@@ -124,16 +122,14 @@ Typescript gives us the types to answer the _what_ of a function but not the _wh
 In the case where documentation is still required (the _why_ of a function is complex) the Typescript eco-system provides [TsDoc](https://github.com/Microsoft/tsdoc). This is a standard way of writing documentation that also works with tooling such as the vscode editor.
 
 ### Tooling
-Another benefit of Typescript is its excellent editor integration, especially with [VsCode](https://code.visualstudio.com/docs/languages/typescript) where it offers intellisense, tools for refactoring, debugging, linting, documentation and formatting.
+Another benefit of Typescript is its excellent editor integration, especially with [VsCode](https://code.visualstudio.com/docs/languages/typescript) where it offers intellisense, tools for refactoring, debugging, linting, documentation and formatting. All of these things will be surfaced by your editor and the compiler.
 
-> For Vim users check out [tsuquyomi](https://github.com/Quramy/tsuquyomi) to get a similar set of tools within your editor
-
-Having these tools will provide a productivity boost for you and your team by removing the overhead that comes with working on a large code base such as searching through documentation or simply trying to figure out the structure a functions parameters. All of these things will be surfaced by your editor and the compiler.
+> For Vim users check out [tsuquyomi](https://github.com/Quramy/tsuquyomi) to get a similar set of tools
 
 ### A Superset
-Maybe Typescripts biggest feature and without question one of the biggest reasons for its growth. It’s a superset of javascript, which basically means that any javascript is also valid typescript. This means becoming a typescript developer is as easy as re-naming your `.js` files to `.ts`.
+Maybe Typescripts biggest feature and without question one of the biggest reasons for its growth. It’s a superset of javascript, which means that any javascript is also valid typescript. This makes becoming a typescript developer as easy as re-naming your `.js` files to `.ts`.
 
-From there you can gradually type more and more of the code and make the compiler stricter until your whole (or whatever amount you want) is fully written with Typescript in mind. This is huge for existing projects that don’t want to start all over again but still want the benefits of a typed language.
+From there you can gradually type more and more of the code and make the compiler stricter until your whole codebase (or whatever amount you want) is fully written with Typescript in mind. This is huge for existing projects that don’t want to start all over again but still want the benefits of a typed language.
 
 > Note you will need to configure some sort of build pipeline but I’m considering that as separate
 
@@ -153,10 +149,10 @@ TypeScript 2.34.2.1
 
 This is a problem in an eco-system that expects things to follow server and not make breaking changes on minor releases. But it surfaces a bigger problem. Besides Ember itself (though this applies to all frameworks), Typescript has the potential to require the largest refactors of your codebase.
 
-Any fundamental (although unlikely) changes to Typescript will have a knock on effect to your codebase and potentially a large swath of it. This makes the lack of semver even more concerning and is something that must be considered carefully before diving straight in.
+Although unlikely, any fundamental changes to Typescript will have a knock on effect to your codebase and potentially a large swath of it. This makes the lack of semver even more concerning and is something that must be considered carefully before diving straight in.
 
 ### Conventions & Expertise
-Another consideration which I think is often glossed over is conventions and the expertise of your team. Sure Typescript is a super set of javascript but that doesn’t mean your team is positioned to take advantage of that. For instance a quick question that arises from our previous example.
+Another consideration which I think is often glossed over is conventions and the expertise of your team. Sure Typescript is a super set of javascript but that doesn’t mean your team is positioned to take advantage of that. For instance, a question that arises from our previous example.
 
 > Should the types we declared above exist within a global types file?
 
@@ -170,7 +166,8 @@ I am lucky to have worked with a variety of different languages and frameworks f
 
 ### Missing Typings
 Unfortunately not every library comes with a set of types fresh out of the oven. As a result you may run into issues where common libraries don’t have types. “Sure no problem, it’s a superset, it will still work” I hear you say.
-While true the Typescript compiler & tools are able to strut their stuff better when the configuration is stricter. This will lead to errors & warnings when attempting to compile code that does not have types or at the least no type safety, which kind of defeats the point.
+
+While true the Typescript compiler & tools are able to strut their stuff best when the configuration is stricter. This will lead to errors & warnings when attempting to compile code that does not have types or at the least no type safety, which kind of defeats the point.
 
 Now there are great projects such as [DefinitelyTyped](https://definitelytyped.org/) which provides a huge library of type definitions but even then common libraries such as [ember-concurrency](http://ember-concurrency.com/docs/introduction/) and [Ember Data Storefront](https://embermap.github.io/ember-data-storefront/) do not have types. This means either adding your own types though a `.d.ts` (a type definitions file) or compromising on the type safety you are supposed to rely on.
 
