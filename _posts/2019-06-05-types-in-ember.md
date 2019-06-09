@@ -1,7 +1,8 @@
 ---
 layout: blog_post
 title: "Static Types in EmberJs?"
-image: "/assets/img/blog-posts/types-in-ember/bg.jpg"
+backdrop: "/assets/img/blog-posts/types-in-ember/backdrop.jpg"
+thumbnail: "/assets/img/blog-posts/types-in-ember/thumbnail.jpg"
 description: "So you’ve decided to look into adding Typescript to your Ember project ..."
 ---
 
