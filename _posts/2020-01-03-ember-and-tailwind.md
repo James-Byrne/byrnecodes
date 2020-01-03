@@ -3,37 +3,30 @@ layout: blog_post
 title: "Ember and tailwindcss"
 backdrop: "/assets/img/blog-posts/ember-and-tailwind/backdrop.png"
 thumbnail: "/assets/img/blog-posts/ember-and-tailwind/thumbnail.png"
+smallBackdropImage: "true"
 description: "Have you heard how awesome tailwindcss and ember are together!? ..."
 ---
 
-# Using TailwindCss with Ember
-
-## Contents
-This is just here so I have something to point to on how to install tailwind without having to introduce the css side of things.
-
-### Topics
-
-- Starting fresh (skippable)
-  - Create a new ember app
-- Adding tailwind to the project
-
 ### Using tailwindcss
 
-For the last year or more, both in work and at home, I've been using [tailwindcss](tailwindcss.com) for styling. I love composing styles together with css utility classes to create great User Interfaces (UI) & User Experiences (UX).  Overall I've found it great & it's functional/compositional nature really gels with me.
+For the last year or more, both in work and at home, I've been using [tailwindcss](tailwindcss.com) for styling. I love composing styles together with css utility classes to create great User Interfaces (UI) & User Experiences (UX). Overall I've found it great and it's functional/compositional nature really gels with me.
 
-> Love it's component system as well! Reducing the number of abstractions to be made up front is a godsend for any project growing quickly.
+> I also love it's component system as well! Reducing the number of abstractions to be made up front is a godsend for any project growing quickly.
 
 Since I like it so much and I use it in pretty much all my examples for all of my posts I thought I'd write up a quick guide for how to get running with tailwindcss and ember.
 
-### Cool! …. but what is it though? (skip if you know what tailwind is)
-Ok for those of you that haven't worked with it yet tailwindcss is a [utility-first](https://tailwindcss.com/docs/utility-first/) framework. This means you start with a set of css classes, each of which do one thing well. We can then compose these classes together to get more complex behaviour. For example, below is a simple (overly excited) button.
+### Cool! …. but what is it though?
+
+> feel free to skip if you know what tailwind is
+
+Ok for those of you that haven't worked with it yet, tailwindcss is a [utility-first](https://tailwindcss.com/docs/utility-first/) framework. You start with a set of css classes, each of which do one thing well. You then compose these classes together to get more complex behaviour. For example, below is a simple, overly excited, button.
 
 ```html
 <button class="bg-pink-500 text-white">Press ME!</button>
 ```
 
 <div class="flex justify-center my-6">
-  <img src="/assets/img/blog-posts/ember-and-tailwind/plain-button.png" />
+  <img src="/assets/img/blog-posts/ember-and-tailwind/simple-button-step-1.png" />
 </div>
 
 Now the classes here are pretty self explanatory but let's go through them anyway.
@@ -88,7 +81,10 @@ Previously we could install the library using `ember-cli-tailwind` by the great 
 
 So this post covers how we can get an ember app up and running with tailwind but if your pretty comfortable with embers basics you can check out the excellent documentation on the github page [here](https://github.com/chrism/emberjs-tailwind-purgecss).
 
-### Getting started (skip this if it's an existing app)
+### Getting started
+
+> skip this if it's an existing app
+
 First of all let's get ember installed. We'll need a version of node installed first, details here. Then we can install ember using ‘npm' like so:
 
 ```bash
@@ -101,6 +97,8 @@ Now that we have ember installed we can create our new project and set it runnin
 ember new tailwind-app
 cd tailwind-app/
 ```
+
+### A quick proof of concept
 
 Now before we dive into setting up tailwind let's first create a small example that uses tailwind classes, that way we know they are working later. Add the following to your `app/templates/application.hbs` file.
 
