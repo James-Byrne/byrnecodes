@@ -2,62 +2,62 @@
 layout: default
 ---
 
-<div id="hero" class="flex flex-col sm:flex-row sm:items-center sm:justify-center w-full max-w-6xl mx-auto relative py-16 px-3 sm:px-12 md:px-3 overflow-hidden">
-  <img src="assets/img/james-headshot.jpg" class="rounded-full shadow h-24 w-24 sm:h-32 sm:w-32 md:h-40 md:w-40" />
-  <div class="sm:mx-8 mt-4 sm:mt-0 max-w-xs sm:max-w-xs lg:max-w-md">
-    <h2 class="text-xl sm:text-2xl lg:text-3xl font-mono">James Byrne :: Byrnecodes</h2>
+<div id="hero" class="relative flex flex-col w-full max-w-6xl px-3 py-16 mx-auto overflow-hidden sm:flex-row sm:items-center sm:justify-center sm:px-12 md:px-3">
+  <img src="assets/img/james-headshot.jpg" class="w-24 h-24 rounded-full shadow sm:h-32 sm:w-32 md:h-40 md:w-40" />
+  <div class="max-w-xs mt-4 sm:mx-8 sm:mt-0 sm:max-w-xs lg:max-w-md">
+    <h2 class="font-mono text-xl sm:text-2xl lg:text-3xl">James Byrne :: Byrnecodes</h2>
     <h3 class="text-lg sm:text-xl lg:text-2xl">Hi I'm James, a full-stack developer with a love of Ember &amp; Elixir</h3>
   </div>
-  <img src="assets/img/b-hex.svg" class="absolute -right-7 xl:right-0 bottom-0 md:h-full w-64 md:w-auto" />
+  <img src="assets/img/b-hex.svg" class="absolute bottom-0 w-64 -right-7 xl:right-0 md:h-full md:w-auto" />
 </div>
 
-<hr class="border-t border-black m-0" />
+<hr class="m-0 border-t border-black" />
 
 <div class="max-w-5xl mx-auto my-12">
   <div class="flex flex-col md:flex-row">
-    <div class="mx-auto md:mx-3 text-center max-w-sm md:max-w-xl mt-4 md:mt-0">
-      <img src="assets/img/ember-logo.svg" class="h-24 w-40 mx-auto mb-3" />
-      <h3 class="mb-3 font-condensed text-2xl">Ember Development</h3>
+    <div class="max-w-sm mx-auto mt-4 text-center md:mx-3 md:max-w-xl md:mt-0">
+      <img src="assets/img/ember-logo.svg" class="w-40 h-24 mx-auto mb-3" />
+      <h3 class="mb-3 text-2xl font-condensed">Ember Development</h3>
       <p class="md:text-sm lg:text-base">I’ve helped startups and established businesses to deliver feature rich and ambitious web apps with ember</p>
     </div>
 
-    <div class="mx-auto md:mx-3 text-center max-w-sm md:max-w-xl mt-4 md:mt-0">
-      <img src="assets/img/elixir-logo.svg" class="h-24 w-24 mx-auto mb-3" />
-      <h3 class="mb-3 font-condensed text-2xl">Elixir Development</h3>
+    <div class="max-w-sm mx-auto mt-4 text-center md:mx-3 md:max-w-xl md:mt-0">
+      <img src="assets/img/elixir-logo.svg" class="w-24 h-24 mx-auto mb-3" />
+      <h3 class="mb-3 text-2xl font-condensed">Elixir Development</h3>
       <p class="md:text-sm lg:text-base">Elixir makes building performant and reliable distributed systems simple, you just need to know how to use it</p>
     </div>
 
-    <div class="mx-auto md:mx-3 text-center max-w-sm md:max-w-xl mt-4 md:mt-0">
-      <img src="assets/img/stripe-logo.svg" class="h-24 w-32 mx-auto mb-3" />
-      <h3 class="mb-3 font-condensed text-2xl">Payment Systems</h3>
+    <div class="max-w-sm mx-auto mt-4 text-center md:mx-3 md:max-w-xl md:mt-0">
+      <img src="assets/img/stripe-logo.svg" class="w-32 h-24 mx-auto mb-3" />
+      <h3 class="mb-3 text-2xl font-condensed">Payment Systems</h3>
       <p class="md:text-sm lg:text-base">Getting paid is the most important part of your applications workflow, but rarely is it treated as such</p>
     </div>
   </div>
 </div>
 
-<hr class="border-t border-ember m-0" />
+<hr class="m-0 border-t border-ember" />
 
 <div class="max-w-5xl mx-auto my-12">
-  <h2 class="font-mono text-4xl text-center mb-12">Thoughts on Things</h2>
+  <h2 class="mb-12 font-mono text-4xl text-center">Thoughts on Things</h2>
 
-  <div class="flex flex-col md:flex-row justify-center">
+  <div class="flex flex-col justify-center md:flex-row">
     {% for post in site.posts limit: 4 %}
-      <a href="{{ post.url }}" class="shadow-lg rounded-lg overflow-hidden transition hover:nudge-u-sm hover:shadow-picked-up mx-auto md:mx-3 max-w-xxs mt-4 md:mt-0 border-r-lg border border-grey-light">
+      <a href="{{ post.url }}" class="mx-auto mt-4 overflow-hidden border rounded-lg shadow-lg transition hover:nudge-u-sm hover:shadow-picked-up md:mx-3 max-w-xxs md:mt-0 border-r-lg border-grey-light">
         <div style="height: 140px; width: 100%; background-image: url({{ post.thumbnail }}); background-size: cover"></div>
-        <h3 class="text-xl font-condensed p-2 pb-1 text-gray-900">{{ post.title }}</h3>
+        <h3 class="p-2 pb-1 text-xl text-gray-900 font-condensed">{{ post.title }}</h3>
         <p class="px-2 pb-2 text-sm text-gray-600">{{ post.description }}</p>
       </a>
     {% endfor %}
   </div>
 </div>
 
-<form action="https://formspree.io/james@byrnecodes.com" method="POST" class="flex flex-col sm:flex-row items-center justify-center bg-ember p-4">
- <span class="max-w-md text-lg sm:text-sm text-white text-center sm:text-left">Want to hear more of my thoughts, drop me your email and I’ll send them your way!</span>
-  <input class="px-3 py-2 sm:py-1 rounded shadow-lg ml-6 w-64 mt-4 sm:mt-0" type="email" name="email" placeholder="email" required="true"/>
-  <button class="bg-gray-900 rounded text-white ml-4 mt-4 sm:mt-0 px-4 py-2 sm:py-1 transition hover:nudge-u-sm hover:shadow-picked-up">Submit</button>
+<form action="https://formspree.io/james@byrnecodes.com" method="POST" class="flex flex-col items-center justify-center p-4 sm:flex-row bg-ember">
+ <span class="max-w-md text-lg text-center text-white sm:text-sm sm:text-left">Want to hear more of my thoughts, drop me your email and I’ll send them your way!</span>
+  <input class="w-64 px-3 py-2 mt-4 ml-6 rounded shadow-lg sm:py-1 sm:mt-0" type="email" name="email" placeholder="email" required="true"/>
+  <button class="px-4 py-2 mt-4 ml-4 text-white bg-gray-900 rounded sm:mt-0 sm:py-1 transition hover:nudge-u-sm hover:shadow-picked-up">Submit</button>
 </form>
 
-<div class="max-w-sm mx-auto py-12 text-center">
-  <h2 class="font-mono text-2xl mb-6">Need advice or have a cool idea? Get in touch</h2>
-  <a href="mailto:james@byrnecodes.com?Subject=Hi" class="border border-black font-mono text-xl px-3 py-1">Contact</a>
+<div class="max-w-sm py-12 mx-auto text-center">
+  <h2 class="mb-6 font-mono text-2xl">Need advice or have a cool idea? Get in touch</h2>
+  <a href="mailto:james@byrnecodes.com?Subject=Hi" class="px-3 py-1 font-mono text-xl border border-black">Contact</a>
 </div>
