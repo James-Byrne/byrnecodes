@@ -122,7 +122,7 @@ Now to get our ember app up and running we need to run `ember serve`. Once that'
 The next step is to add tailwind itself and configure it into the ember build pipeline. It's easier than it sounds I swear. To start we will need the following dependencies:
 
 ```bash
-yarn add ember-cli-postcss tailwindcss postcss-import @fullhuman/postcss-purgecss -D
+yarn add ember-cli-postcss tailwindcss autoprefixer postcss-import @fullhuman/postcss-purgecss -D
 ```
 
 Next we need to generate the tailwind configuration file. To do this we need to enter the tailwind directory within our app and run the tailwind init command using `npx` (`npm install npx -g` if you don't have it).
