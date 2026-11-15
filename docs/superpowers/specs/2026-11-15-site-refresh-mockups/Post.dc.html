@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Byrnecodes — Blog post</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Ubuntu+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FFFFFF}
+a{color:#B23A24}a:hover{color:#8A2B1A}
+.nav a{color:#1A202C;text-decoration:none}.nav a:hover{color:#B23A24}
+.btn-primary{background:#1A202C;color:#FFFFFF;text-decoration:none}.btn-primary:hover{background:#B23A24;color:#FFFFFF}
+.more{color:#1A202C;text-decoration:none}.more:hover span.t{color:#B23A24}
+</style>
+</helmet>
+<div style="font-family: Inter, -apple-system, 'Segoe UI', sans-serif; color: #1A202C; background: #FFFFFF; min-width: 0">
+
+  <header style="max-width: 1160px; margin: 0 auto; padding: 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap">
+    <a href="Main.dc.html" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #1A202C">
+      <svg width="36" height="40" viewBox="0 0 36 40" aria-hidden="true"><polygon points="18,1 35,10.5 35,29.5 18,39 1,29.5 1,10.5" fill="#1A202C"></polygon></svg>
+      <span style="font-family: 'Ubuntu Mono', monospace; font-size: 28px; letter-spacing: 0.5px">Byrnecodes</span>
+    </a>
+    <nav class="nav" aria-label="Primary" style="display: flex; align-items: center; gap: 28px; flex-wrap: wrap; font-size: 15px; font-weight: 500">
+      <a href="Main.dc.html#skills">Skills</a>
+      <a href="Main.dc.html#work">Work</a>
+      <a href="Main.dc.html#writing" aria-current="page" style="box-shadow: inset 0 -2px 0 {{accent}}; padding-bottom: 4px">Writing</a>
+      <a href="mailto:james@byrnecodes.com" class="btn-primary" style="padding: 10px 18px; border-radius: 8px; min-height: 44px; box-sizing: border-box; display: flex; align-items: center">Get in touch</a>
+    </nav>
+  </header>
+
+  <article style="max-width: 720px; margin: 0 auto; padding: 56px 24px 88px; display: flex; flex-direction: column; gap: 28px">
+    <a href="Main.dc.html#writing" style="font-family: 'Ubuntu Mono', monospace; font-size: 15px; text-decoration: none">← All writing</a>
+    <div style="display: flex; flex-direction: column; gap: 16px">
+      <p style="margin: 0; font-family: 'Ubuntu Mono', monospace; font-size: 15px; color: #4A5568; display: flex; gap: 12px; flex-wrap: wrap"><span>3 January 2020</span><span aria-hidden="true">·</span><span>Ember</span><span aria-hidden="true">·</span><span>CSS</span><span aria-hidden="true">·</span><span>[5 min read]</span></p>
+      <h1 style="margin: 0; font-size: clamp(36px, 5vw, 52px); line-height: 1.08; letter-spacing: -1.4px; font-weight: 700; text-wrap: balance">Ember and tailwindcss</h1>
+      <p style="margin: 0; font-size: 20px; line-height: 1.55; color: #4A5568; text-wrap: pretty">Have you heard how awesome tailwindcss and Ember are together!?</p>
+    </div>
+    <img src="/_blob/6a0cdd7a43ac733672d69486df4445b4" alt="" style="width: 100%; aspect-ratio: 10 / 3; object-fit: contain; border-radius: 12px; background: #F2F2F2; border: 1px solid #E2E8F0; box-sizing: border-box">
+
+    <h2 style="margin: 16px 0 0; font-family: 'Ubuntu Mono', monospace; font-size: 30px; font-weight: 400">Using tailwindcss</h2>
+    <p style="margin: 0; font-size: 18px; line-height: 1.75; color: #2D3748; text-wrap: pretty">For the last year or more, both in work and at home, I’ve been using <a href="#">tailwindcss</a> for styling. I love composing styles together with CSS utility classes to create great user interfaces and experiences. Overall I’ve found it great, and its functional, compositional nature really gels with me.</p>
+    <blockquote style="margin: 8px 0; padding: 0; display: flex; gap: 20px; align-items: flex-start">
+      <svg width="22" height="25" viewBox="0 0 36 40" aria-hidden="true" style="flex: none; margin-top: 6px"><polygon points="18,1 35,10.5 35,29.5 18,39 1,29.5 1,10.5" fill="{{accent}}"></polygon></svg>
+      <p style="margin: 0; font-size: 22px; line-height: 1.5; color: #1A202C; font-weight: 500; text-wrap: pretty">I also love its component system. Reducing the number of abstractions to be made up front is a godsend for any project growing quickly.</p>
+    </blockquote>
+    <p style="margin: 0; font-size: 18px; line-height: 1.75; color: #2D3748; text-wrap: pretty">Since I like it so much, and I use it in pretty much all the examples in my posts, I thought I’d write up a quick guide for getting running with tailwindcss and Ember.</p>
+    <h3 style="margin: 12px 0 0; font-size: 22px; font-weight: 600; line-height: 1.3">Cool! … but what is it though?</h3>
+    <p style="margin: 0; font-size: 18px; line-height: 1.75; color: #2D3748; text-wrap: pretty">For those of you that haven’t worked with it yet, tailwindcss is a <a href="#">utility-first</a> framework. You start with a set of CSS classes, each of which does one thing well, then compose them to get more complex behaviour. For example, below is a simple, overly excited, button.</p>
+    <pre style="margin: 0; padding: 22px 24px; background: #1A202C; color: #E2E8F0; border-radius: 12px; font-family: 'Ubuntu Mono', monospace; font-size: 16px; line-height: 1.6; overflow-x: auto"><code><span style="color: #E2E8F0">&lt;</span><span style="color: #F6A28C">button</span> <span style="color: #90CDF4">class</span><span style="color: #E2E8F0">=</span><span style="color: #9AE6B4">"bg-pink-500 text-white"</span><span style="color: #E2E8F0">&gt;</span>Press ME!<span style="color: #E2E8F0">&lt;/</span><span style="color: #F6A28C">button</span><span style="color: #E2E8F0">&gt;</span></code></pre>
+    <figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
+      <img src="/_blob/556e29c730553ad2920700c4d50c547c" alt="A pink button reading Press ME!" style="width: 100%; border-radius: 12px; border: 1px solid #E2E8F0; box-sizing: border-box">
+    </figure>
+    <p style="margin: 0; font-size: 18px; line-height: 1.75; color: #2D3748; text-wrap: pretty">The classes are pretty self-explanatory, but let’s go through them anyway:</p>
+    <ul style="margin: 0; padding-left: 24px; display: flex; flex-direction: column; gap: 10px; font-size: 18px; line-height: 1.7; color: #2D3748">
+      <li><code style="font-family: 'Ubuntu Mono', monospace; font-size: 16px; background: #FDF0EC; color: #8A2B1A; padding: 2px 6px; border-radius: 4px">bg-pink-500</code> sets the background colour</li>
+      <li><code style="font-family: 'Ubuntu Mono', monospace; font-size: 16px; background: #FDF0EC; color: #8A2B1A; padding: 2px 6px; border-radius: 4px">text-white</code> sets the text colour</li>
+    </ul>
+    <p style="margin: 0; font-size: 18px; line-height: 1.75; color: #4A5568">[…rest of post]</p>
+
+    <aside aria-label="About the author" style="margin-top: 32px; padding: 28px; background: #F7FAFC; border: 1px solid #E2E8F0; border-radius: 12px; display: flex; gap: 24px; align-items: center; flex-wrap: wrap">
+      <img src="/_blob/ed8b20f8c005de0039f05647647d290b" alt="James Byrne" style="flex: none; width: 88px; height: 101px; clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); object-fit: cover; background: #CBD5E0">
+      <div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
+        <p style="margin: 0; font-weight: 600; font-size: 17px">James Byrne</p>
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4A5568">Full-stack developer: Ember and Rails web apps, iPhone and Apple Watch apps, and payments. <a href="mailto:james@byrnecodes.com?Subject=Hi!">Get in touch</a></p>
+      </div>
+    </aside>
+
+    <nav aria-label="More writing" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 16px; margin-top: 16px">
+      <a class="more" href="#" style="display: flex; flex-direction: column; gap: 6px; padding: 20px 0; border-top: 2px solid #E2E8F0">
+        <span style="font-family: 'Ubuntu Mono', monospace; font-size: 14px; color: #4A5568">← Older</span>
+        <span class="t" style="font-size: 17px; font-weight: 600">Static types in Ember?</span>
+      </a>
+      <a class="more" href="#" style="display: flex; flex-direction: column; gap: 6px; padding: 20px 0; border-top: 2px solid #E2E8F0; text-align: right">
+        <span style="font-family: 'Ubuntu Mono', monospace; font-size: 14px; color: #4A5568">Newer →</span>
+        <span class="t" style="font-size: 17px; font-weight: 600">[How I run test-first delivery with AI agents]</span>
+      </a>
+    </nav>
+  </article>
+
+  <section style="background: #1A202C; color: #FFFFFF">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 72px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 32px">
+      <div style="display: flex; flex-direction: column; gap: 10px; flex: 1 1 420px; min-width: 0">
+        <h2 style="margin: 0; font-family: 'Ubuntu Mono', monospace; font-size: 36px; font-weight: 400">Need advice or have a cool idea?</h2>
+        <p style="margin: 0; font-size: 17px; color: #CBD5E0">james@byrnecodes.com</p>
+      </div>
+      <a href="mailto:james@byrnecodes.com?Subject=Hi!" style="background: {{accent}}; color: #FFFFFF; text-decoration: none; padding: 16px 28px; border-radius: 8px; font-weight: 600; font-size: 17px">Get in touch</a>
+    </div>
+  </section>
+
+  <footer style="max-width: 1160px; margin: 0 auto; padding: 28px 24px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 14px; color: #4A5568">
+    <span>© 2026 Byrnecodes</span>
+    <span style="font-family: 'Ubuntu Mono', monospace">[GitHub] · [LinkedIn]</span>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#C8432D","options":["#C8432D","#1A202C","#2B6CB0"]},"$preview":{"width":1280,"height":3000}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { accent: this.props.accent ?? '#C8432D' };
+  }
+}
+</script>
+</body>
+</html>
