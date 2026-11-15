@@ -8,17 +8,46 @@ const post = page('2020/01/03/ember-and-tailwind.html');
 
 test('html declares English', () => assert.equal(home.documentElement.getAttribute('lang'), 'en'));
 
+const HOME_TITLE = 'James Byrne — freelance Ember, Rails and iOS developer';
+const HOME_DESCRIPTION =
+  'James Byrne is a freelance full-stack developer in Ireland: Ember and Rails web apps, iPhone and Apple Watch apps, and payment systems.';
+const jsonLd = (d) => [...d.querySelectorAll('script[type="application/ld+json"]')].map((s) => s.textContent);
+
 test('home title, description, canonical, image', () => {
-  assert.equal(home.title, 'Byrnecodes | James Byrne — full-stack developer');
-  assert.equal(
-    home.querySelector('meta[name="description"]').getAttribute('content'),
-    'James Byrne, full-stack developer: Ember & Rails web apps, iPhone & Apple Watch apps, and payment systems.',
-  );
+  assert.equal(home.title, `${HOME_TITLE} | Byrnecodes`);
+  assert.equal(home.querySelector('meta[property="og:title"]').getAttribute('content'), HOME_TITLE);
+  assert.equal(home.querySelector('meta[name="description"]').getAttribute('content'), HOME_DESCRIPTION);
   assert.equal(home.querySelector('link[rel="canonical"]').getAttribute('href'), 'https://byrnecodes.com/');
   assert.equal(
     home.querySelector('meta[property="og:image"]').getAttribute('content'),
     'https://byrnecodes.com/assets/img/james-headshot-lg.jpg',
   );
+});
+
+test('locale is Irish English', () => {
+  assert.equal(home.querySelector('meta[property="og:locale"]').getAttribute('content'), 'en_IE');
+});
+
+test('structured data is never double-escaped', () => {
+  for (const d of [home, post])
+    for (const json of jsonLd(d)) assert.ok(!/&amp;|\\u0026amp;/.test(json), json.slice(0, 120));
+});
+
+test('home structured data describes James and the business, in Ireland', () => {
+  const graph = jsonLd(home).map((j) => JSON.parse(j)).flatMap((j) => j['@graph'] ?? [j]);
+  const person = graph.find((n) => n['@type'] === 'Person');
+  assert.equal(person.name, 'James Byrne');
+  assert.equal(person.url, 'https://byrnecodes.com/');
+  assert.equal(person.address.addressCountry, 'IE');
+  assert.deepEqual(person.sameAs, ['https://github.com/james-byrne', 'https://www.linkedin.com/in/jamesdesbyrne/']);
+  for (const topic of ['Ember.js', 'Ruby on Rails', 'Swift', 'iOS']) assert.ok(person.knowsAbout.includes(topic), topic);
+  const business = graph.find((n) => n['@type'] === 'ProfessionalService');
+  assert.equal(business.name, 'Byrnecodes');
+  assert.equal(business.areaServed.name, 'Ireland');
+});
+
+test('the hero says where James is based', () => {
+  assert.ok(home.querySelector('section#top').textContent.includes('freelance full-stack developer based in Ireland'));
 });
 
 test('post canonical is extensionless and image is its backdrop', () => {

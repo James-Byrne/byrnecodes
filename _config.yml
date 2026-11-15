@@ -1,13 +1,17 @@
 title: Byrnecodes
-tagline: James Byrne — full-stack developer
-description: "James Byrne, full-stack developer: Ember & Rails web apps, iPhone & Apple Watch apps, and payment systems."
+description: "James Byrne is a freelance full-stack developer in Ireland: Ember and Rails web apps, iPhone and Apple Watch apps, and payment systems."
 url: https://byrnecodes.com
+locale: en_IE
 author: James Byrne
 email: james@byrnecodes.com
 availability: ""
 social:
+  name: James Byrne
   github: james-byrne
   linkedin: https://www.linkedin.com/in/jamesdesbyrne/
+  links:
+    - https://github.com/james-byrne
+    - https://www.linkedin.com/in/jamesdesbyrne/
 
 highlighter: rouge
 permalink: /:year/:month/:day/:title

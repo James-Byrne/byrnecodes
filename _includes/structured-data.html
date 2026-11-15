@@ -1,0 +1,30 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "{{ site.url }}/#james",
+      "name": "James Byrne",
+      "url": "{{ site.url }}/",
+      "image": "{{ site.url }}/assets/img/james-headshot-lg.jpg",
+      "jobTitle": "Freelance full-stack developer",
+      "email": "mailto:{{ site.email }}",
+      "address": { "@type": "PostalAddress", "addressCountry": "IE" },
+      "knowsAbout": ["Ember.js", "TypeScript", "Ruby on Rails", "Swift", "SwiftUI", "iOS", "watchOS", "Elixir", "Phoenix", "Payment systems"],
+      "sameAs": {{ site.social.links | jsonify }}
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "{{ site.url }}/#business",
+      "name": "{{ site.title }}",
+      "url": "{{ site.url }}/",
+      "description": {{ site.description | jsonify }},
+      "founder": { "@id": "{{ site.url }}/#james" },
+      "email": "mailto:{{ site.email }}",
+      "address": { "@type": "PostalAddress", "addressCountry": "IE" },
+      "areaServed": { "@type": "Country", "name": "Ireland" }
+    }
+  ]
+}
+</script>
