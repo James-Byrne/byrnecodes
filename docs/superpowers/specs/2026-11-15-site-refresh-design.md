@@ -19,12 +19,12 @@ Tick each item as it lands; an interruption should lose nothing.
 - [x] 1. Toolchain: Jekyll 4.4 and the Tailwind v4 CLI; remove gulp, babel and purgecss; add `netlify.toml`, `.ruby-version` and `.nvmrc`; `npm run build` passes from a clean clone
 - [x] 2. Design tokens, fonts and base styles in `src/style.css`
 - [x] 3. `<head>`: `jekyll-seo-tag`, `lang="en"`, manifest fix, favicons kept
-- [ ] 4. Header and nav, including the phone menu with a no-JS fallback
+- [x] 4. Header and nav, including the phone menu with a no-JS fallback
 - [ ] 5. Home: hero and honeycomb
 - [ ] 6. Home: skills, from `_data/skills.yml`
 - [ ] 7. Home: selected work, from `_data/work.yml`
 - [ ] 8. Home: writing list
-- [ ] 9. Contact band and footer, as shared includes
+- [x] 9. Contact band and footer, as shared includes
 - [ ] 10. Post layout, prose styles and the dark syntax theme
 - [ ] 11. Post front matter and heading normalisation (see Content changes)
 - [ ] 12. `404.html`

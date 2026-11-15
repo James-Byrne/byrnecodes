@@ -1,0 +1,9 @@
+<section class="bg-ink text-white" aria-labelledby="contact-heading">
+  <div class="container-site flex flex-wrap items-center justify-between gap-6 py-14 md:gap-8 md:py-[88px]">
+    <div class="flex min-w-0 flex-[1_1_420px] flex-col gap-2.5">
+      <h2 id="contact-heading" class="font-mono text-[32px] font-normal leading-[1.15] {% if page.layout == 'blog_post' %}md:text-[36px]{% else %}md:text-[40px]{% endif %}">Need advice or have a cool idea?</h2>
+      <p class="text-base text-tile-strong md:text-[17px]">{{ site.email }}</p>
+    </div>
+    <a href="mailto:{{ site.email }}?Subject=Hi!" class="btn-accent w-full sm:w-auto">Get in touch</a>
+  </div>
+</section>

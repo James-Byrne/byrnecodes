@@ -1,0 +1,16 @@
+<header id="site-header" class="site-header" data-menu="closed">
+  <div class="site-header-inner">
+    <a href="/" class="site-logo"><img src="/assets/img/byrnecodes.svg" alt="Byrnecodes home" width="216" height="52"></a>
+    <button id="menu-toggle" class="menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
+      <svg class="icon-open" width="20" height="14" viewBox="0 0 20 14" aria-hidden="true"><path d="M1 1h18M1 7h18M1 13h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+      <svg class="icon-close" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 2l12 12M14 2L2 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Primary">
+      <a href="/#skills" data-num="01">Skills</a>
+      <a href="/#work" data-num="02">Work</a>
+      <a href="/#writing" data-num="03"{% if page.layout == 'blog_post' %} aria-current="page"{% endif %}>Writing</a>
+      <a href="mailto:{{ site.email }}?Subject=Hi!" class="btn-primary">Get in touch</a>
+      <p class="nav-email">{{ site.email }}</p>
+    </nav>
+  </div>
+</header>

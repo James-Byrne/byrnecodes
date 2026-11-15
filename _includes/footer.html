@@ -1,0 +1,9 @@
+<footer class="container-site flex flex-wrap justify-between gap-4 py-6 text-sm text-muted md:py-7">
+  <span>© {{ 'now' | date: '%Y' }} Byrnecodes</span>
+  <span class="flex gap-2 font-mono">
+    <a href="https://github.com/{{ site.social.github }}" class="text-muted hover:text-accent-text">GitHub</a>
+    {%- if site.social.linkedin and site.social.linkedin != "" -%}
+      <span aria-hidden="true">·</span><a href="{{ site.social.linkedin }}" class="text-muted hover:text-accent-text">LinkedIn</a>
+    {%- endif %}
+  </span>
+</footer>
