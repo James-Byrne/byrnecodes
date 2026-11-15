@@ -312,6 +312,10 @@ The default layout: h1 "Page not found", one line "That page doesn’t exist, or
 - Default blockquotes are quiet asides; only `.pull` blockquotes get the pull-quote treatment. The mockup showed only the pull quote, but the posts are mostly asides.
 - The GitHub repo is public. Nothing under `docs/` names the employer, and the canvas link only opens for James.
 - `jekyll-seo-tag` only. A sitemap and an RSS feed are cheap follow-ups but out of scope.
+- Built 2026-11-15:
+  - Ruby is pinned to 3.4.12 in `.ruby-version` (for Netlify) and in `mise.toml` (locally). Jekyll 4.4.1 needed no extra stdlib gems on it.
+  - Reading time is the rendered text (`strip_html`) ÷ 200, rounded up.
+  - A work image with no `image_alt` falls back to its title as alt text.
 
 ## Left to the builder
 - Class naming, and whether components are Liquid includes or inline.
