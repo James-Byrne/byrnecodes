@@ -5,16 +5,20 @@ twitter_username: '@jamesdesbyrne'
 github_username: 'james-byrne'
 
 highlighter: rouge
+permalink: /:year/:month/:day/:title
 
 exclude:
   - docs
+  - test
+  - tmp
+  - src
+  - node_modules
   - Gemfile
   - Gemfile.lock
-  - gulpfile.babel.js
-  - LICENSE.md
-  - node_modules
   - package.json
   - package-lock.json
   - README.md
-  - src
-  - tailwind.config.js
+  - LICENSE.md
+  - netlify.toml
+  - renovate.json
+  - mise.toml
