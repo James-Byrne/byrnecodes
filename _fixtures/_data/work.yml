@@ -5,3 +5,9 @@
   image: /assets/img/james-headshot.jpg
   image_alt: Example screenshot
   url: https://example.com/
+
+- title: No alt given
+  meta: Fixture · 2026
+  body: A fixture work item with an image but no image_alt.
+  tile: tile
+  image: /assets/img/james-headshot.jpg

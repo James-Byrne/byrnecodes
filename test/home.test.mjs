@@ -99,3 +99,9 @@ test('honeycomb is decorative with the photo in the centre', () => {
   assert.equal(img.getAttribute('src'), '/assets/img/james-headshot.jpg');
   assert.equal(img.getAttribute('alt'), '');
 });
+
+test('a work image without image_alt falls back to the title', () => {
+  const imgs = [...page('index.html', VARIANT).querySelectorAll('#work .work-card img')];
+  assert.equal(imgs.length, 2);
+  assert.equal(imgs[1].getAttribute('alt'), 'No alt given');
+});

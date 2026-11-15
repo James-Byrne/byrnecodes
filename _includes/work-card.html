@@ -1,7 +1,7 @@
 {%- assign item = include.item -%}
 {%- capture inner -%}
   {%- if item.image -%}
-    <img class="work-media" src="{{ item.image }}" alt="{{ item.image_alt | escape }}" loading="lazy">
+    <img class="work-media" src="{{ item.image }}" alt="{{ item.image_alt | default: item.title | escape }}" loading="lazy">
   {%- else -%}
     <div class="work-media work-media--{{ item.tile }}" aria-hidden="true">{{ item.title | escape }}</div>
   {%- endif %}
