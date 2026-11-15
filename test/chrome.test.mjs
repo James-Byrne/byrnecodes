@@ -42,7 +42,8 @@ test('contact band and footer on every page', () => {
     const f = d.querySelector('body > footer');
     assert.ok(f.textContent.includes(`© ${new Date().getFullYear()} Byrnecodes`));
     assert.ok(f.querySelector('a[href="https://github.com/james-byrne"]'));
-    assert.equal(f.querySelector('a[href*="linkedin"]'), null);
+    const linkedin = f.querySelector('a.footer-link[href="https://www.linkedin.com/in/jamesdesbyrne/"]');
+    assert.equal(linkedin.textContent.trim(), 'LinkedIn');
   }
 });
 

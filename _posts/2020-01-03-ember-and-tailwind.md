@@ -11,9 +11,9 @@ description: "Have you heard how awesome tailwindcss and ember are together!?"
 
 ## Using tailwindcss
 
-For the last year or more, both in work and at home, I've been using [tailwindcss](tailwindcss.com) for styling. I love composing styles together with css utility classes to create great User Interfaces (UI) & User Experiences (UX). Overall I've found it great and it's functional/compositional nature really gels with me.
+For the last year or more, both in work and at home, I've been using [tailwindcss](tailwindcss.com) for styling. I love composing styles together with css utility classes to create great User Interfaces (UI) & User Experiences (UX). Overall I've found it great and its functional/compositional nature really gels with me.
 
-> I also love it's component system as well! Reducing the number of abstractions to be made up front is a godsend for any project growing quickly.
+> I also love its component system as well! Reducing the number of abstractions to be made up front is a godsend for any project growing quickly.
 {: .pull}
 
 Since I like it so much and I use it in pretty much all my examples for all of my posts I thought I'd write up a quick guide for how to get running with tailwindcss and ember.

@@ -67,6 +67,14 @@ test('prose cannot widen the page', () => {
   assert.match(css(), /\.prose\{[^}]*overflow-wrap:(anywhere|break-word)/);
 });
 
+test('possessive "its" typos are fixed and "it is" contractions kept', () => {
+  const prose = text(tw.querySelector('.prose'));
+  assert.ok(prose.includes('its functional/compositional nature'));
+  assert.ok(prose.includes('I also love its component system'));
+  assert.ok(prose.includes('But it’s not really a nice looking button yet'));
+  assert.equal(re.querySelector('.post-dek').textContent.trim(), 'My thoughts on Ember, its strengths and where I hope they goes next');
+});
+
 test('reading time counts words, not markup', () => {
   for (const d of [tw, ty, re]) {
     const words = d.querySelector('.prose').textContent.trim().split(/\s+/).length;

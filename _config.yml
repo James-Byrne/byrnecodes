@@ -7,7 +7,7 @@ email: james@byrnecodes.com
 availability: ""
 social:
   github: james-byrne
-  linkedin: ""
+  linkedin: https://www.linkedin.com/in/jamesdesbyrne/
 
 highlighter: rouge
 permalink: /:year/:month/:day/:title

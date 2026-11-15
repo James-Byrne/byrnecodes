@@ -33,10 +33,10 @@ Tick each item as it lands; an interruption should lose nothing.
 - [ ] 15. Netlify deploy preview checked before merging to `master`
 
 ### Content James supplies (placeholders until then)
-- [ ] Availability line, e.g. "Taking on new work from January". Empty hides the line.
-- [ ] Work images: Bogha (iPhone and Watch) and Perry Oil (order page). The ticketing card has no image (see Decisions).
+- [x] Availability line, e.g. "Taking on new work from January". Empty hides the line. *James: keep it hidden for now.*
+- [x] Work images: Bogha shows three iPhone screens (no Watch screen); Perry Oil shows the live home page; Ticketing shows an illustration (see Decisions).
 - [ ] Work links, if any: the Perry Oil live URL, the Bogha App Store or TestFlight URL
-- [ ] LinkedIn URL. Keep or drop the Twitter/X handle `@jamesdesbyrne`.
+- [x] LinkedIn URL. Keep or drop the Twitter/X handle `@jamesdesbyrne`. *James: LinkedIn https://www.linkedin.com/in/jamesdesbyrne/; drop Twitter/X.*
 - [ ] Netlify UI check (only James has dashboard access). Record:
   - any environment variables (`RUBY_VERSION`, `NODE_VERSION`, `JEKYLL_ENV`)
   - post-processing options (Pretty URLs) and redirects
@@ -315,6 +315,7 @@ The default layout: h1 "Page not found", one line "That page doesn’t exist, or
 - Built 2026-11-15:
   - Ruby is pinned to 3.4.12 in `.ruby-version` (for Netlify) and in `mise.toml` (locally). Jekyll 4.4.1 needed no extra stdlib gems on it.
   - Reading time is the rendered text (`strip_html`) ÷ 200, rounded up.
+  - On James's OK, the three possessive "it's" typos were fixed: two in the tailwind post, one in the retrospective's description. No other wording changed.
   - A work image with no `image_alt` falls back to its title as alt text.
 
 ## Left to the builder
