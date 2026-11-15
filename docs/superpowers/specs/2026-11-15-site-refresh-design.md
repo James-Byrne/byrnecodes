@@ -16,9 +16,9 @@ Tick each item as it lands; an interruption should lose nothing.
 
 ### Build
 - [x] 0. Add `docs` to `_config.yml` `exclude`, so this spec and the mockups are never published
-- [ ] 1. Toolchain: Jekyll 4.4 and the Tailwind v4 CLI; remove gulp, babel and purgecss; add `netlify.toml`, `.ruby-version` and `.nvmrc`; `npm run build` passes from a clean clone
-- [ ] 2. Design tokens, fonts and base styles in `src/style.css`
-- [ ] 3. `<head>`: `jekyll-seo-tag`, `lang="en"`, manifest fix, favicons kept
+- [x] 1. Toolchain: Jekyll 4.4 and the Tailwind v4 CLI; remove gulp, babel and purgecss; add `netlify.toml`, `.ruby-version` and `.nvmrc`; `npm run build` passes from a clean clone
+- [x] 2. Design tokens, fonts and base styles in `src/style.css`
+- [x] 3. `<head>`: `jekyll-seo-tag`, `lang="en"`, manifest fix, favicons kept
 - [ ] 4. Header and nav, including the phone menu with a no-JS fallback
 - [ ] 5. Home: hero and honeycomb
 - [ ] 6. Home: skills, from `_data/skills.yml`

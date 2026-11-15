@@ -1,11 +1,25 @@
-title: Byrnecodes | Ember & Elixir consulting
-description: Ember & Elixir consulting
-email: 'james@byrnecodes.com'
-twitter_username: '@jamesdesbyrne'
-github_username: 'james-byrne'
+title: Byrnecodes
+tagline: James Byrne — full-stack developer
+description: "James Byrne, full-stack developer: Ember & Rails web apps, iPhone & Apple Watch apps, and payment systems."
+url: https://byrnecodes.com
+author: James Byrne
+email: james@byrnecodes.com
+availability: ""
+social:
+  github: james-byrne
+  linkedin: ""
 
 highlighter: rouge
 permalink: /:year/:month/:day/:title
+
+plugins:
+  - jekyll-seo-tag
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/img/james-headshot-lg.jpg
 
 exclude:
   - docs

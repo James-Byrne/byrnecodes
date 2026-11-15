@@ -2,6 +2,7 @@
 layout: blog_post
 title: "Ember and tailwindcss"
 backdrop: "/assets/img/blog-posts/ember-and-tailwind/backdrop.png"
+image: "/assets/img/blog-posts/ember-and-tailwind/backdrop.png"
 thumbnail: "/assets/img/blog-posts/ember-and-tailwind/thumbnail.png"
 smallBackdropImage: "true"
 description: "Have you heard how awesome tailwindcss and ember are together!? ..."
