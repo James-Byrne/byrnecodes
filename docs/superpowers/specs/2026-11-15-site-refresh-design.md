@@ -25,8 +25,8 @@ Tick each item as it lands; an interruption should lose nothing.
 - [x] 7. Home: selected work, from `_data/work.yml`
 - [x] 8. Home: writing list
 - [x] 9. Contact band and footer, as shared includes
-- [ ] 10. Post layout, prose styles and the dark syntax theme
-- [ ] 11. Post front matter and heading normalisation (see Content changes)
+- [x] 10. Post layout, prose styles and the dark syntax theme
+- [x] 11. Post front matter and heading normalisation (see Content changes)
 - [ ] 12. `404.html`
 - [ ] 13. Remove dead assets, the newsletter form and starter-kit files; rewrite the README
 - [ ] 14. Verification pass (see Verification)

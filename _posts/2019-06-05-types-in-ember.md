@@ -3,11 +3,11 @@ layout: blog_post
 title: "Static Types in EmberJs?"
 backdrop: "/assets/img/blog-posts/types-in-ember/backdrop.jpg"
 image: "/assets/img/blog-posts/types-in-ember/backdrop.jpg"
+topics: [Ember, TypeScript]
 thumbnail: "/assets/img/blog-posts/types-in-ember/thumbnail.jpg"
-description: "So you’ve decided to look into adding Typescript to your Ember project ..."
+description: "So you’ve decided to look into adding Typescript to your Ember project"
 ---
 
-# Static Types in EmberJs?
 So you’ve decided to add Typescript to your Ember project. You’ve heard all about the benefits of Static Typing and how it will deliver a more maintainable codebase than plain ol’ javascript (couldn’t be that hard right?).
 
 Well before you dive in head first there are a few points I’d recommend you consider. After all, this is a change to your underlying programming language (yes I know it’s a superset and more on that later) so some pros and cons are to be expected. But to start of positive, let’s look at some of the upsides first.
@@ -19,7 +19,7 @@ Well before you dive in head first there are a few points I’d recommend you co
 ### The Benefits of Static Typing
 
 <div class="flex justify-center my-6">
-  <img src="/assets/img/blog-posts/types-in-ember/meme.jpg" />
+  <img src="/assets/img/blog-posts/types-in-ember/meme.jpg" alt="Godfather meme: you come to me at runtime to tell me the code you are executing does not compile" />
 </div>
 
 > This is now my favourite meme ever

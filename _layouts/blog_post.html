@@ -1,6 +1,40 @@
 ---
 layout: default
 ---
-<article class="mx-auto max-w-[720px] px-5 py-14 sm:px-6">
-  {{ content }}
-</article>
+{%- assign words = content | number_of_words -%}
+{%- assign minutes = words | divided_by: 200.0 | ceil -%}
+<main>
+  <article class="post">
+    <a href="/#writing" class="post-back">← All writing</a>
+    <header class="post-head">
+      <p class="post-meta">{{ page.date | date: '%-d %B %Y' }}{% for topic in page.topics %} · {{ topic }}{% endfor %} · {{ minutes }} min read</p>
+      <h1 class="post-title">{{ page.title | escape }}</h1>
+      {%- if page.description %}
+      <p class="post-dek">{{ page.description | escape }}</p>
+      {%- endif %}
+    </header>
+    {%- if page.backdrop %}
+    <img class="post-banner{% if page.smallBackdropImage == 'true' %} is-contained{% endif %}" src="{{ page.backdrop }}" alt="">
+    {%- endif %}
+    <div class="prose">
+      {{ content }}
+    </div>
+    <aside class="author" aria-label="About the author">
+      <img class="author-photo" src="/assets/img/james-headshot.jpg" alt="James Byrne" width="88" height="101">
+      <div class="author-text">
+        <p class="author-name">James Byrne</p>
+        <p class="author-bio">Full-stack developer: Ember and Rails web apps, iPhone and Apple Watch apps, and payments. <a href="mailto:{{ site.email }}?Subject=Hi!">Get in touch</a></p>
+      </div>
+    </aside>
+    {%- if page.previous or page.next %}
+    <nav class="post-nav" aria-label="More writing">
+      {%- if page.previous %}
+      <a class="post-older" href="{{ page.previous.url }}"><span class="post-nav-label">← Older</span><span class="post-nav-title">{{ page.previous.title | escape }}</span></a>
+      {%- endif %}
+      {%- if page.next %}
+      <a class="post-newer" href="{{ page.next.url }}"><span class="post-nav-label">Newer →</span><span class="post-nav-title">{{ page.next.title | escape }}</span></a>
+      {%- endif %}
+    </nav>
+    {%- endif %}
+  </article>
+</main>
