@@ -44,16 +44,26 @@ test('section headings', () => {
   );
 });
 
-test('work: three cards, ticketing has a decorative name tile, none link', () => {
+test('work: three cards in order, none link', () => {
   const cards = [...home.querySelectorAll('#work .work-card')];
   assert.deepEqual(
     cards.map((c) => c.querySelector('h3').textContent.trim()),
     ['Bogha', 'Ticketing platform', 'Perry Oil'],
   );
-  const t = cards[1];
-  assert.equal(t.querySelector('img'), null);
-  assert.equal(t.querySelector('.work-media').getAttribute('aria-hidden'), 'true');
   assert.ok(cards.every((c) => c.tagName === 'ARTICLE'));
+});
+
+test('a work item without an image shows a decorative name tile', () => {
+  const tile = [...page('index.html', VARIANT).querySelectorAll('#work .work-card')]
+    .find((c) => c.querySelector('h3').textContent.trim() === 'Tile only');
+  assert.equal(tile.querySelector('img'), null);
+  assert.equal(tile.querySelector('.work-media').getAttribute('aria-hidden'), 'true');
+});
+
+test('the ticketing card shows an illustrative box-office image', () => {
+  const img = home.querySelectorAll('#work .work-card')[1].querySelector('img.work-media');
+  assert.equal(img.getAttribute('src'), '/assets/img/work/ticketing.jpg');
+  assert.match(img.getAttribute('alt'), /^Illustrative box-office screen/);
 });
 
 test('work card with url and image is one link', () => {
@@ -104,4 +114,13 @@ test('a work image without image_alt falls back to the title', () => {
   const imgs = [...page('index.html', VARIANT).querySelectorAll('#work .work-card img')];
   assert.equal(imgs.length, 2);
   assert.equal(imgs[1].getAttribute('alt'), 'No alt given');
+});
+
+test('Bogha and Perry Oil cards show their screenshots with alt text', () => {
+  const cards = [...home.querySelectorAll('#work .work-card')];
+  for (const [i, src] of [[0, '/assets/img/work/bogha.jpg'], [2, '/assets/img/work/perry-oil.jpg']]) {
+    const img = cards[i].querySelector('img.work-media');
+    assert.equal(img.getAttribute('src'), src);
+    assert.ok(img.getAttribute('alt').length > 10, cards[i].querySelector('h3').textContent);
+  }
 });

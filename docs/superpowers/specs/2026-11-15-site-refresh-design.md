@@ -305,7 +305,7 @@ The default layout: h1 "Page not found", one line "That page doesn’t exist, or
 
 ## Decisions (Claude's calls; check them)
 - Approach 1 for the pipeline (above).
-- The Ticketing card has no screenshot: its box-office UI is the employer's product. It shows a name tile instead.
+- The Ticketing card has no real screenshot, because its box-office UI is the employer's product. Since 2026-11-15, at James's request, it shows an original illustration instead: a fictional venue's box office, drawn for this site and not modelled on the real product. Its alt text says it is illustrative.
 - No writing archive until there are more than 6 posts.
 - The phone menu uses a JS toggle with a no-JS inline fallback, rather than `<details>`, so it can close itself after a link is tapped.
 - The existing `byrnecodes.svg` is reused rather than redrawn, so the brand mark stays identical. The artboards approximate it with a hex plus live Ubuntu Mono text. That one difference is expected in the side-by-side check (24px tall on phone, 52px on desktop).

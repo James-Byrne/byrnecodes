@@ -11,3 +11,8 @@
   body: A fixture work item with an image but no image_alt.
   tile: tile
   image: /assets/img/james-headshot.jpg
+
+- title: Tile only
+  meta: Fixture · 2026
+  body: A fixture work item with no image.
+  tile: ink

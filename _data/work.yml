@@ -2,13 +2,19 @@
   meta: iOS · watchOS · 2026
   body: "An archery training app for iPhone and Apple Watch: scoring, equipment setups, training plans, video, and voice notes summarised on-device."
   tile: ink
+  image: /assets/img/work/bogha.jpg
+  image_alt: "Three Bogha iPhone screens: the entries list, a live WA 18m scorecard and the weekly progress chart"
 
 - title: Ticketing platform
   meta: Ember · Rails · payments
   body: Annual passes, recurring donations with Gift Aid and Direct Debit, card-terminal refunds and email campaigns for venues’ box offices.
   tile: tile
+  image: /assets/img/work/ticketing.jpg
+  image_alt: "Illustrative box-office screen for a fictional venue: a seat map beside a basket with tickets, an annual pass, a Direct Debit donation with Gift Aid, and a card-terminal payment"
 
 - title: Perry Oil
   meta: Phoenix · card payments · since 2021
   body: Heating-oil ordering with online card payment and an admin back office, built and maintained for a local supplier.
   tile: accent-tint
+  image: /assets/img/work/perry-oil.jpg
+  image_alt: The Perry Oil home page, with a Perry Oil tanker beside the Quick Quote order form
