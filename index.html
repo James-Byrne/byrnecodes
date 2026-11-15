@@ -34,7 +34,21 @@ layout: default
         </article>
         {%- endfor %}
       </div>
-      <p class="text-[15px] leading-[1.6] text-muted"><strong class="font-semibold text-ink">Also:</strong> Elixir &amp; Phoenix (client sites I’ve maintained since 2021) · fast static sites for small businesses</p>
+      <div class="also">
+        <h3 class="also-label">Also</h3>
+        <div class="also-grid">
+          {%- for item in site.data.also %}
+          <div class="also-item">
+            <svg width="20" height="22" viewBox="0 0 36 40" aria-hidden="true"><polygon points="18,1 35,10.5 35,29.5 18,39 1,29.5 1,10.5" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+            <div class="also-text">
+              <h4>{{ item.title | escape }}</h4>
+              <p class="also-body">{{ item.body | escape }}</p>
+              <p class="stack">{{ item.stack | escape }}</p>
+            </div>
+          </div>
+          {%- endfor %}
+        </div>
+      </div>
     </div>
   </section>
 

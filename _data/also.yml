@@ -1,0 +1,7 @@
+- title: Elixir & Phoenix
+  body: Online ordering with card payments for a heating-oil supplier, running and maintained since 2021.
+  stack: Phoenix · LiveView · Postgres
+
+- title: Small-business websites
+  body: Fast, search-friendly static sites for local businesses, including rebuilds of slow WordPress sites.
+  stack: HTML · CSS · SEO

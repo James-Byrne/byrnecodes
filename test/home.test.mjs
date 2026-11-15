@@ -23,18 +23,27 @@ test('availability hidden when empty, shown when set', () => {
   );
 });
 
-test('skills: four cards in order, then the also line', () => {
+test('skills: four cards in order', () => {
   assert.deepEqual(
     [...home.querySelectorAll('#skills .skill-card h3')].map((h) => h.textContent.trim()),
-    ['Ambitious web apps', 'iPhone & Apple Watch', 'Payment systems', 'AI-assisted delivery'],
+    ['Ambitious web apps', 'iPhone & Watch', 'Payment systems', 'AI-assisted delivery'],
   );
-  assert.equal(home.querySelector('#skills .skill-card p.stack').textContent.trim(), 'Ember · TypeScript · Rails');
-  assert.ok(
-    home
-      .querySelector('#skills')
-      .textContent.replace(/\s+/g, ' ')
-      .includes('Elixir & Phoenix (client sites I’ve maintained since 2021) · fast static sites for small businesses'),
+  assert.equal(home.querySelector('#skills .skill-card p.stack').textContent.trim(), 'Ember · TypeScript · Rails · Postgres');
+});
+
+test('skills: an Also tier lists secondary work with a line and stack each', () => {
+  const also = home.querySelector('#skills .also');
+  assert.equal(also.querySelector('h3.also-label').textContent.trim(), 'Also');
+  const items = [...also.querySelectorAll('.also-item')];
+  assert.deepEqual(
+    items.map((i) => i.querySelector('h4').textContent.trim()),
+    ['Elixir & Phoenix', 'Small-business websites'],
   );
+  for (const i of items) {
+    assert.ok(i.querySelector('p.also-body').textContent.trim().length > 20);
+    assert.ok(i.querySelector('p.stack').textContent.includes('·'));
+  }
+  assert.ok(!home.querySelector('#skills').textContent.includes('Also:'));
 });
 
 test('section headings', () => {

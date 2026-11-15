@@ -193,6 +193,42 @@
   .skill-card .stack { font-family: var(--font-mono); font-size: 15px; color: var(--color-muted); }
   .skill-card .skill-body { font-size: 15px; line-height: 1.6; color: var(--color-body); }
 
+  .also {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding-top: 28px;
+    border-top: 1px solid var(--color-line);
+  }
+
+  .also-label {
+    font-family: var(--font-mono);
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+
+  .also-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+    gap: 20px 32px;
+  }
+
+  .also-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    color: var(--color-muted);
+  }
+
+  .also-item svg { flex: none; margin-top: 2px; }
+  .also-text { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+  .also-text h4 { font-size: 16px; font-weight: 600; color: var(--color-ink); }
+  .also-body { font-size: 15px; line-height: 1.6; color: var(--color-body); }
+  .also-text .stack { font-family: var(--font-mono); font-size: 14px; color: var(--color-muted); }
+
   .work-card {
     display: flex;
     flex-direction: column;
