@@ -66,3 +66,10 @@ test('prose cannot widen the page', () => {
   assert.match(css(), /\.prose pre\{[^}]*overflow-x:auto/);
   assert.match(css(), /\.prose\{[^}]*overflow-wrap:(anywhere|break-word)/);
 });
+
+test('reading time counts words, not markup', () => {
+  for (const d of [tw, ty, re]) {
+    const words = d.querySelector('.prose').textContent.trim().split(/\s+/).length;
+    assert.match(text(d.querySelector('.post-meta')), new RegExp(` · ${Math.ceil(words / 200)} min read$`));
+  }
+});
