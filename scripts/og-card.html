@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&family=Ubuntu+Mono:wght@400&display=swap">
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  body { width: 1200px; height: 630px; overflow: hidden; background: #FFFFFF; font-family: Inter, sans-serif; color: #1A202C; position: relative; }
+  .copy { position: absolute; left: 72px; top: 64px; bottom: 76px; width: 720px; display: flex; flex-direction: column; }
+  .brand { display: flex; align-items: center; gap: 14px; font-family: "Ubuntu Mono", monospace; font-size: 30px; }
+  .kicker { margin-top: auto; font-family: "Ubuntu Mono", monospace; font-size: 24px; color: #4A5568; }
+  h1 { margin-top: 14px; font-size: 64px; line-height: 1.06; letter-spacing: -1.5px; font-weight: 700; text-wrap: balance; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  h1.long { font-size: 54px; }
+  .meta { margin-top: 22px; font-family: "Ubuntu Mono", monospace; font-size: 22px; color: #4A5568; }
+  .bar { position: absolute; left: 0; right: 0; bottom: 0; height: 14px; background: #C8432D; }
+  .comb { position: absolute; right: -60px; top: 50%; transform: translateY(-50%); width: 470px; aspect-ratio: 1 / 0.93; }
+  .hex { position: absolute; width: 31%; height: 38.5%; clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); object-fit: cover; }
+</style>
+</head>
+<body>
+  <div class="copy">
+    <div class="brand"><svg width="36" height="40" viewBox="0 0 36 40"><polygon points="18,1 35,10.5 35,29.5 18,39 1,29.5 1,10.5" fill="#000"/></svg>Byrnecodes</div>
+    <p class="kicker" id="kicker"></p>
+    <h1 id="title"></h1>
+    <p class="meta" id="meta"></p>
+  </div>
+  <div class="comb">
+    <div class="hex" style="left:18.25%;top:.25%;background:#1A202C"></div>
+    <div class="hex" style="left:50.75%;top:.25%;background:#C8432D"></div>
+    <div class="hex" style="left:2%;top:30.75%;background:#EDF2F7"></div>
+    <div class="hex" id="centre" style="left:34.5%;top:30.75%;background:#C8432D"></div>
+    <div class="hex" style="left:67%;top:30.75%;background:#EDF2F7"></div>
+    <div class="hex" style="left:18.25%;top:61.25%;background:#C8432D"></div>
+    <div class="hex" style="left:50.75%;top:61.25%;background:#1A202C"></div>
+  </div>
+  <div class="bar"></div>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const title = params.get('title') ?? '';
+    document.getElementById('kicker').textContent = params.get('kicker') ?? '';
+    document.getElementById('title').textContent = title;
+    document.getElementById('meta').textContent = params.get('meta') ?? '';
+    if (title.length > 48) document.getElementById('title').classList.add('long');
+    if (params.get('photo')) {
+      const img = document.createElement('img');
+      img.className = 'hex';
+      img.src = params.get('photo');
+      img.style.cssText = 'left:34.5%;top:30.75%';
+      document.getElementById('centre').replaceWith(img);
+    }
+  </script>
+</body>
+</html>

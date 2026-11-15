@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Renders a 1200×630 share card: scripts/og-card <out.png> <title> [kicker] [meta] [photo path]
+set -euo pipefail
+
+out=$1
+title=$2
+kicker=${3:-}
+meta=${4:-}
+photo=${5:-}
+root=$(cd "$(dirname "$0")/.." && pwd)
+chrome=${CHROME:-"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"}
+enc() { node -e 'process.stdout.write(encodeURIComponent(process.argv[1]))' "$1"; }
+
+query="title=$(enc "$title")&kicker=$(enc "$kicker")&meta=$(enc "$meta")"
+[ -n "$photo" ] && query="$query&photo=$(enc "file://$root/$photo")"
+
+"$chrome" --headless=new --disable-gpu --hide-scrollbars --allow-file-access-from-files \
+  --window-size=1200,630 --force-device-scale-factor=1 --virtual-time-budget=6000 \
+  --screenshot="$root/$out" "file://$root/scripts/og-card.html?$query" 2>/dev/null
+echo "$out"

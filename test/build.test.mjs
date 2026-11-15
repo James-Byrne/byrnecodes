@@ -18,6 +18,6 @@ test('old post URLs keep their output paths', () => {
 });
 
 test('build-only files are not published', () => {
-  for (const p of ['docs', 'test', 'src', 'tmp', '_fixtures', '2026', 'gulpfile.babel.js', 'package.json', 'netlify.toml', 'README.md', 'mise.toml'])
+  for (const p of ['docs', 'test', 'src', 'tmp', 'scripts', '_fixtures', '2026', 'gulpfile.babel.js', 'package.json', 'netlify.toml', 'README.md', 'mise.toml'])
     assert.ok(!exists(p), p);
 });

@@ -2,7 +2,7 @@
 layout: blog_post
 title: "A Retrospective on Ember"
 backdrop: "/assets/img/blog-posts/ember-retro/backdrop.jpg"
-image: "/assets/img/blog-posts/ember-retro/backdrop.jpg"
+image: /assets/img/social/ember-a-retrospective.png
 topics: [Ember]
 thumbnail: "/assets/img/blog-posts/ember-retro/thumbnail.jpg"
 description: "My thoughts on Ember, its strengths and where I hope they goes next"

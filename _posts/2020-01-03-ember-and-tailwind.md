@@ -2,7 +2,7 @@
 layout: blog_post
 title: "Ember and tailwindcss"
 backdrop: "/assets/img/blog-posts/ember-and-tailwind/backdrop.png"
-image: "/assets/img/blog-posts/ember-and-tailwind/backdrop.png"
+image: /assets/img/social/ember-and-tailwind.png
 topics: [Ember, CSS]
 thumbnail: "/assets/img/blog-posts/ember-and-tailwind/thumbnail.png"
 smallBackdropImage: "true"

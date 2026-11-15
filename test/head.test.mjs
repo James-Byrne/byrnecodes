@@ -18,10 +18,27 @@ test('home title, description, canonical, image', () => {
   assert.equal(home.querySelector('meta[property="og:title"]').getAttribute('content'), HOME_TITLE);
   assert.equal(home.querySelector('meta[name="description"]').getAttribute('content'), HOME_DESCRIPTION);
   assert.equal(home.querySelector('link[rel="canonical"]').getAttribute('href'), 'https://byrnecodes.com/');
-  assert.equal(
-    home.querySelector('meta[property="og:image"]').getAttribute('content'),
-    'https://byrnecodes.com/assets/img/james-headshot-lg.jpg',
-  );
+});
+
+const pngSize = (path) => {
+  const png = readFileSync(path);
+  return [png.readUInt32BE(16), png.readUInt32BE(20)];
+};
+
+test('every page shares a 1200×630 card of its own', () => {
+  const cards = {
+    'index.html': 'home',
+    '2018/07/18/ember-a-retrospective.html': 'ember-a-retrospective',
+    '2019/06/05/types-in-ember.html': 'types-in-ember',
+    '2020/01/03/ember-and-tailwind.html': 'ember-and-tailwind',
+  };
+  for (const [path, card] of Object.entries(cards)) {
+    const d = page(path);
+    const url = `https://byrnecodes.com/assets/img/social/${card}.png`;
+    assert.equal(d.querySelector('meta[property="og:image"]').getAttribute('content'), url, path);
+    assert.equal(d.querySelector('meta[name="twitter:image"]').getAttribute('content'), url, path);
+    assert.deepEqual(pngSize(`_site/assets/img/social/${card}.png`), [1200, 630], card);
+  }
 });
 
 test('locale is Irish English', () => {
@@ -50,14 +67,10 @@ test('the hero says where James is based', () => {
   assert.ok(home.querySelector('section#top').textContent.includes('freelance full-stack developer based in Ireland'));
 });
 
-test('post canonical is extensionless and image is its backdrop', () => {
+test('post canonical is extensionless', () => {
   assert.equal(
     post.querySelector('link[rel="canonical"]').getAttribute('href'),
     'https://byrnecodes.com/2020/01/03/ember-and-tailwind',
-  );
-  assert.match(
-    post.querySelector('meta[property="og:image"]').getAttribute('content'),
-    /\/assets\/img\/blog-posts\/ember-and-tailwind\/backdrop\.png$/,
   );
 });
 

@@ -25,10 +25,11 @@ defaults:
   - scope:
       path: ""
     values:
-      image: /assets/img/james-headshot-lg.jpg
+      image: /assets/img/social/home.png
 
 exclude:
   - docs
+  - scripts
   - test
   - tmp
   - src
