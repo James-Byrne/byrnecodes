@@ -23,6 +23,71 @@ test('availability hidden when empty, shown when set', () => {
   );
 });
 
+test('skills: four cards in order, then the also line', () => {
+  assert.deepEqual(
+    [...home.querySelectorAll('#skills .skill-card h3')].map((h) => h.textContent.trim()),
+    ['Ambitious web apps', 'iPhone & Apple Watch', 'Payment systems', 'AI-assisted delivery'],
+  );
+  assert.equal(home.querySelector('#skills .skill-card p.stack').textContent.trim(), 'Ember · TypeScript · Rails');
+  assert.ok(
+    home
+      .querySelector('#skills')
+      .textContent.replace(/\s+/g, ' ')
+      .includes('Elixir & Phoenix (client sites I’ve maintained since 2021) · fast static sites for small businesses'),
+  );
+});
+
+test('section headings', () => {
+  assert.deepEqual(
+    ['skills', 'work', 'writing'].map((id) => home.querySelector(`section#${id} h2`).textContent.trim()),
+    ['What I do', 'Selected work', 'Thoughts on things'],
+  );
+});
+
+test('work: three cards, ticketing has a decorative name tile, none link', () => {
+  const cards = [...home.querySelectorAll('#work .work-card')];
+  assert.deepEqual(
+    cards.map((c) => c.querySelector('h3').textContent.trim()),
+    ['Bogha', 'Ticketing platform', 'Perry Oil'],
+  );
+  const t = cards[1];
+  assert.equal(t.querySelector('img'), null);
+  assert.equal(t.querySelector('.work-media').getAttribute('aria-hidden'), 'true');
+  assert.ok(cards.every((c) => c.tagName === 'ARTICLE'));
+});
+
+test('work card with url and image is one link', () => {
+  const c = page('index.html', VARIANT).querySelector('#work .work-card');
+  assert.equal(c.tagName, 'A');
+  assert.equal(c.getAttribute('href'), 'https://example.com/');
+  assert.match(c.getAttribute('rel'), /noopener/);
+  assert.equal(c.querySelector('img').getAttribute('alt'), 'Example screenshot');
+});
+
+test('writing lists real posts newest first with month dates', () => {
+  const links = [...home.querySelectorAll('.writing-list a')];
+  assert.deepEqual(
+    links.map((a) => a.getAttribute('href')),
+    ['/2020/01/03/ember-and-tailwind', '/2019/06/05/types-in-ember', '/2018/07/18/ember-a-retrospective'],
+  );
+  assert.deepEqual(
+    links.map((a) => a.querySelector('.date').textContent.trim()),
+    ['Jan 2020', 'Jun 2019', 'Jul 2018'],
+  );
+  assert.ok(links[0].classList.contains('is-newest'));
+});
+
+test('writing caps at six newest', () => {
+  const titles = [...page('index.html', VARIANT).querySelectorAll('.writing-list a h3')].map((h) => h.textContent.trim());
+  assert.deepEqual(titles, ['Fixture 7', 'Fixture 6', 'Fixture 5', 'Fixture 4', 'Fixture 3', 'Fixture 2']);
+});
+
+test('old services, post cards and newsletter are gone', () => {
+  const html = home.documentElement.outerHTML;
+  assert.ok(!/formspree/i.test(html));
+  assert.ok(!html.includes('Elixir Development'));
+});
+
 test('honeycomb is decorative with the photo in the centre', () => {
   const h = home.querySelector('.honeycomb');
   assert.equal(h.getAttribute('aria-hidden'), 'true');

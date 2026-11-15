@@ -21,9 +21,9 @@ Tick each item as it lands; an interruption should lose nothing.
 - [x] 3. `<head>`: `jekyll-seo-tag`, `lang="en"`, manifest fix, favicons kept
 - [x] 4. Header and nav, including the phone menu with a no-JS fallback
 - [x] 5. Home: hero and honeycomb
-- [ ] 6. Home: skills, from `_data/skills.yml`
-- [ ] 7. Home: selected work, from `_data/work.yml`
-- [ ] 8. Home: writing list
+- [x] 6. Home: skills, from `_data/skills.yml`
+- [x] 7. Home: selected work, from `_data/work.yml`
+- [x] 8. Home: writing list
 - [x] 9. Contact band and footer, as shared includes
 - [ ] 10. Post layout, prose styles and the dark syntax theme
 - [ ] 11. Post front matter and heading normalisation (see Content changes)

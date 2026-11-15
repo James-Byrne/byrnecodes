@@ -1,0 +1,14 @@
+- title: Bogha
+  meta: iOS · watchOS · 2026
+  body: "An archery training app for iPhone and Apple Watch: scoring, equipment setups, training plans, video, and voice notes summarised on-device."
+  tile: ink
+
+- title: Ticketing platform
+  meta: Ember · Rails · payments
+  body: Annual passes, recurring donations with Gift Aid and Direct Debit, card-terminal refunds and email campaigns for venues’ box offices.
+  tile: tile
+
+- title: Perry Oil
+  meta: Phoenix · card payments · since 2021
+  body: Heating-oil ordering with online card payment and an admin back office, built and maintained for a local supplier.
+  tile: accent-tint

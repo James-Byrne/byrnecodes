@@ -1,0 +1,15 @@
+- title: Ambitious web apps
+  stack: Ember · TypeScript · Rails
+  body: Ember apps in strict TypeScript, backed by Rails APIs. Day to day I build box-office and online-checkout features for a ticketing platform.
+
+- title: iPhone & Apple Watch
+  stack: Swift · SwiftUI · SwiftData · CloudKit
+  body: Native apps synced over iCloud, with Watch companions, widgets, video and on-device AI. Bogha, my archery training app, is where I prove it.
+
+- title: Payment systems
+  stack: Card terminals · Direct Debit · online checkout
+  body: Getting paid is the most important part of your app’s workflow, but rarely treated as such. Terminal payments and refunds, Direct Debit, recurring donations, Gift Aid.
+
+- title: AI-assisted delivery
+  stack: Claude Code · skills · hooks · agents
+  body: Test-first delivery where agents plan, build, review and QA in parallel and I sign off. I can set the same workflow up for your team.

@@ -1,0 +1,16 @@
+{%- assign item = include.item -%}
+{%- capture inner -%}
+  {%- if item.image -%}
+    <img class="work-media" src="{{ item.image }}" alt="{{ item.image_alt | escape }}" loading="lazy">
+  {%- else -%}
+    <div class="work-media work-media--{{ item.tile }}" aria-hidden="true">{{ item.title | escape }}</div>
+  {%- endif %}
+  <p class="work-meta">{{ item.meta | escape }}</p>
+  <h3>{{ item.title | escape }}</h3>
+  <p class="work-body">{{ item.body | escape }}</p>
+{%- endcapture -%}
+{%- if item.url -%}
+<a class="work-card" href="{{ item.url }}" rel="noopener">{{ inner }}</a>
+{%- else -%}
+<article class="work-card">{{ inner }}</article>
+{%- endif -%}

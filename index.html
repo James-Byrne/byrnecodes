@@ -1,68 +1,63 @@
 ---
 layout: default
 ---
-
-<section id="top" class="container-site flex flex-wrap items-center gap-10 pt-8 pb-16 md:gap-14 md:pt-[72px] md:pb-24">
-  <div class="flex min-w-0 flex-[999_1_520px] flex-col gap-5 md:gap-6">
-    <p class="font-mono text-[17px] text-muted md:text-xl">James Byrne :: Byrnecodes</p>
-    <h1 class="hero-title">Web apps, iPhone apps, and the payments that keep them earning.</h1>
-    <p class="max-w-[560px] text-[17px] leading-[1.6] text-pretty text-muted md:text-[19px]">I’m a full-stack developer. Ember and Rails for ambitious web apps, Swift and SwiftUI for native iPhone and Apple Watch apps, and a lot of time spent making sure money moves correctly.</p>
-    <div class="flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:gap-3">
-      <a href="mailto:{{ site.email }}?Subject=Hi!" class="btn-primary btn-lg">Start a project</a>
-      <a href="#work" class="btn-ghost">See the work</a>
+<main>
+  <section id="top" class="container-site flex flex-wrap items-center gap-10 pt-8 pb-16 md:gap-14 md:pt-[72px] md:pb-24">
+    <div class="flex min-w-0 flex-[999_1_520px] flex-col gap-5 md:gap-6">
+      <p class="font-mono text-[17px] text-muted md:text-xl">James Byrne :: Byrnecodes</p>
+      <h1 class="hero-title">Web apps, iPhone apps, and the payments that keep them earning.</h1>
+      <p class="max-w-[560px] text-[17px] leading-[1.6] text-pretty text-muted md:text-[19px]">I’m a full-stack developer. Ember and Rails for ambitious web apps, Swift and SwiftUI for native iPhone and Apple Watch apps, and a lot of time spent making sure money moves correctly.</p>
+      <div class="flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:gap-3">
+        <a href="mailto:{{ site.email }}?Subject=Hi!" class="btn-primary btn-lg">Start a project</a>
+        <a href="#work" class="btn-ghost">See the work</a>
+      </div>
+      {%- if site.availability and site.availability != "" %}
+      <p data-availability class="flex items-center gap-2 text-sm text-muted"><span class="size-2 flex-none rounded-full bg-ok" aria-hidden="true"></span>{{ site.availability }}</p>
+      {%- endif %}
     </div>
-    {%- if site.availability and site.availability != "" %}
-    <p data-availability class="flex items-center gap-2 text-sm text-muted"><span class="size-2 flex-none rounded-full bg-ok" aria-hidden="true"></span>{{ site.availability }}</p>
-    {%- endif %}
-  </div>
-  {% include honeycomb.html %}
-</section>
+    {% include honeycomb.html %}
+  </section>
 
-<div class="max-w-5xl mx-auto my-12">
-  <div class="flex flex-col md:flex-row">
-    <div class="max-w-sm mx-auto mt-4 text-center md:mx-3 md:max-w-xl md:mt-0">
-      <img src="assets/img/ember-logo.svg" class="w-40 h-24 mx-auto mb-3" />
-      <h3 class="mb-3 text-2xl font-condensed">Ember Development</h3>
-      <p class="md:text-sm lg:text-base">I’ve helped startups and established businesses to deliver feature rich and ambitious web apps with ember</p>
+  <section id="skills" class="border-y border-line bg-surface">
+    <div class="container-site flex flex-col gap-7 py-14 md:gap-12 md:py-[88px]">
+      <div class="flex max-w-[640px] flex-col gap-2.5 md:gap-3">
+        <h2 class="section-title">What I do</h2>
+        <p class="text-base leading-[1.6] text-muted md:text-[17px]">Four things I do every week, not just things I’ve tried.</p>
+      </div>
+      <div class="skills-grid">
+        {%- for skill in site.data.skills %}
+        <article class="skill-card">
+          <svg width="32" height="36" viewBox="0 0 36 40" aria-hidden="true"><polygon points="18,1 35,10.5 35,29.5 18,39 1,29.5 1,10.5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          <h3>{{ skill.title | escape }}</h3>
+          <p class="stack">{{ skill.stack | escape }}</p>
+          <p class="skill-body">{{ skill.body | escape }}</p>
+        </article>
+        {%- endfor %}
+      </div>
+      <p class="text-[15px] leading-[1.6] text-muted"><strong class="font-semibold text-ink">Also:</strong> Elixir &amp; Phoenix (client sites I’ve maintained since 2021) · fast static sites for small businesses</p>
     </div>
+  </section>
 
-    <div class="max-w-sm mx-auto mt-4 text-center md:mx-3 md:max-w-xl md:mt-0">
-      <img src="assets/img/elixir-logo.svg" class="w-24 h-24 mx-auto mb-3" />
-      <h3 class="mb-3 text-2xl font-condensed">Elixir Development</h3>
-      <p class="md:text-sm lg:text-base">Elixir makes building performant and reliable distributed systems simple, you just need to know how to use it</p>
+  <section id="work" class="container-site flex flex-col gap-8 py-16 md:gap-10 md:py-24">
+    <h2 class="section-title">Selected work</h2>
+    <div class="work-grid">
+      {%- for item in site.data.work %}
+      {% include work-card.html item=item %}
+      {%- endfor %}
     </div>
+  </section>
 
-    <div class="max-w-sm mx-auto mt-4 text-center md:mx-3 md:max-w-xl md:mt-0">
-      <img src="assets/img/stripe-logo.svg" class="w-32 h-24 mx-auto mb-3" />
-      <h3 class="mb-3 text-2xl font-condensed">Payment Systems</h3>
-      <p class="md:text-sm lg:text-base">Getting paid is the most important part of your applications workflow, but rarely is it treated as such</p>
+  <section id="writing" class="border-t border-line">
+    <div class="container-site flex flex-col gap-5 py-14 md:gap-8 md:py-[88px]">
+      <h2 class="section-title">Thoughts on things</h2>
+      <div class="writing-list">
+        {%- for post in site.posts limit: 6 %}
+        <a href="{{ post.url }}" class="writing-item{% if forloop.first %} is-newest{% endif %}">
+          <span class="date">{{ post.date | date: '%b %Y' }}</span>
+          <h3>{{ post.title | escape }}</h3>
+        </a>
+        {%- endfor %}
+      </div>
     </div>
-  </div>
-</div>
-
-<hr class="m-0 border-t border-ember" />
-
-<div class="max-w-5xl mx-auto my-12">
-  <h2 class="mb-12 font-mono text-4xl text-center">Thoughts on Things</h2>
-
-  <div class="flex flex-col justify-center md:flex-row">
-    {% for post in site.posts limit: 4 %}
-      <a href="{{ post.url }}" class="mx-auto mt-4 overflow-hidden border rounded-lg shadow-lg transition hover:nudge-u-sm hover:shadow-picked-up md:mx-3 max-w-xxs md:mt-0 border-r-lg border-grey-light">
-        <div style="height: 140px; width: 100%; background-image: url({{ post.thumbnail }}); background-size: cover"></div>
-        <h3 class="p-2 pb-1 text-xl text-gray-900 font-condensed">{{ post.title }}</h3>
-        <p class="px-2 pb-2 text-sm text-gray-600">{{ post.description }}</p>
-      </a>
-    {% endfor %}
-  </div>
-</div>
-
-<form action="https://formspree.io/james@byrnecodes.com" method="POST" class="flex flex-col items-center justify-center p-4 sm:flex-row bg-ember">
- <span class="max-w-md text-lg text-center text-white sm:text-sm sm:text-left">Want to hear more of my thoughts, drop me your email and I’ll send them your way!</span>
-  <input class="w-64 px-3 py-2 mt-4 ml-6 rounded shadow-lg sm:py-1 sm:mt-0" type="email" name="email" placeholder="email" required="true"/>
-  <button class="px-4 py-2 mt-4 ml-4 text-white bg-gray-900 rounded sm:mt-0 sm:py-1 transition hover:nudge-u-sm hover:shadow-picked-up">Submit</button>
-</form>
-
-<div class="max-w-sm py-12 mx-auto text-center">
-  <h2 class="mb-6 font-mono text-2xl">Need advice or have a cool idea? Get in touch</h2>
-  <a href="mailto:james@byrnecodes.com?Subject=Hi" class="px-3 py-1 font-mono text-xl border border-black">Contact</a>
-</div>
+  </section>
+</main>
