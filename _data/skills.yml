@@ -1,8 +1,8 @@
 - title: Ambitious web apps
-  stack: Ember · TypeScript · Rails
+  stack: Ember · TypeScript · Rails · Postgres
   body: Ember apps in strict TypeScript, backed by Rails APIs. Day to day I build box-office and online-checkout features for a ticketing platform.
 
-- title: iPhone & Apple Watch
+- title: iPhone & Watch
   stack: Swift · SwiftUI · SwiftData · CloudKit
   body: Native apps synced over iCloud, with Watch companions, widgets, video and on-device AI. Bogha, my archery training app, is where I prove it.
 
