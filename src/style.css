@@ -276,8 +276,22 @@
   }
 
   .site-nav a:not(.btn-primary) {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
     color: var(--color-ink);
     text-decoration: none;
+  }
+
+  .footer-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--color-muted);
+  }
+
+  .footer-link:hover {
+    color: var(--color-accent-text);
   }
 
   .site-nav a:not(.btn-primary):hover {
@@ -400,6 +414,10 @@
   }
 
   .post-back {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    min-height: 44px;
     font-family: var(--font-mono);
     font-size: 15px;
     text-decoration: none;

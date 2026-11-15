@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { page } from './helpers.mjs';
+import { css, page } from './helpers.mjs';
 
 const home = page('index.html');
 const post = page('2020/01/03/ember-and-tailwind.html');
@@ -44,4 +44,12 @@ test('contact band and footer on every page', () => {
     assert.ok(f.querySelector('a[href="https://github.com/james-byrne"]'));
     assert.equal(f.querySelector('a[href*="linkedin"]'), null);
   }
+});
+
+test('standalone links meet the 44px touch target', () => {
+  const c = css();
+  assert.match(c, /\.post-back\{[^}]*min-height:44px/);
+  assert.match(c, /\.footer-link\{[^}]*min-height:44px/);
+  assert.match(c, /\.site-nav a:not\(\.btn-primary\)\{[^}]*min-height:44px/);
+  assert.ok(home.querySelector('body > footer a.footer-link[href="https://github.com/james-byrne"]'));
 });
