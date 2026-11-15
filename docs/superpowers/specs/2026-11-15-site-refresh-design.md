@@ -27,8 +27,8 @@ Tick each item as it lands; an interruption should lose nothing.
 - [x] 9. Contact band and footer, as shared includes
 - [x] 10. Post layout, prose styles and the dark syntax theme
 - [x] 11. Post front matter and heading normalisation (see Content changes)
-- [ ] 12. `404.html`
-- [ ] 13. Remove dead assets, the newsletter form and starter-kit files; rewrite the README
+- [x] 12. `404.html`
+- [x] 13. Remove dead assets, the newsletter form and starter-kit files; rewrite the README
 - [ ] 14. Verification pass (see Verification)
 - [ ] 15. Netlify deploy preview checked before merging to `master`
 
