@@ -5,7 +5,8 @@
     "css": "tailwindcss -i src/style.css -o assets/css/style.css --minify",
     "build": "npm run css && bundle exec jekyll build",
     "start": "tailwindcss -i src/style.css -o assets/css/style.css --watch & bundle exec jekyll serve --livereload",
-    "test": "npm run build && node --test test/"
+    "build:variant": "bundle exec jekyll build --config _config.yml,_fixtures/variant.yml --destination tmp/variant",
+    "test": "npm run build && npm run build:variant && node --test test/"
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.3.5",

@@ -20,7 +20,7 @@ Tick each item as it lands; an interruption should lose nothing.
 - [x] 2. Design tokens, fonts and base styles in `src/style.css`
 - [x] 3. `<head>`: `jekyll-seo-tag`, `lang="en"`, manifest fix, favicons kept
 - [x] 4. Header and nav, including the phone menu with a no-JS fallback
-- [ ] 5. Home: hero and honeycomb
+- [x] 5. Home: hero and honeycomb
 - [ ] 6. Home: skills, from `_data/skills.yml`
 - [ ] 7. Home: selected work, from `_data/work.yml`
 - [ ] 8. Home: writing list

@@ -1,0 +1,7 @@
+- title: Example
+  meta: Fixture · 2026
+  body: A fixture work item with a link and an image.
+  tile: tile
+  image: /assets/img/james-headshot.jpg
+  image_alt: Example screenshot
+  url: https://example.com/

@@ -2,16 +2,21 @@
 layout: default
 ---
 
-<div id="hero" class="relative flex flex-col w-full max-w-6xl px-3 py-16 mx-auto overflow-hidden sm:flex-row sm:items-center sm:justify-center sm:px-12 md:px-3">
-  <img src="assets/img/james-headshot.jpg" class="w-24 h-24 rounded-full shadow sm:h-32 sm:w-32 md:h-40 md:w-40" />
-  <div class="max-w-xs mt-4 sm:mx-8 sm:mt-0 sm:max-w-xs lg:max-w-md">
-    <h2 class="font-mono text-xl sm:text-2xl lg:text-3xl">James Byrne :: Byrnecodes</h2>
-    <h3 class="text-lg sm:text-xl lg:text-2xl">Hi I'm James, a full-stack developer with a love of Ember &amp; Elixir</h3>
+<section id="top" class="container-site flex flex-wrap items-center gap-10 pt-8 pb-16 md:gap-14 md:pt-[72px] md:pb-24">
+  <div class="flex min-w-0 flex-[999_1_520px] flex-col gap-5 md:gap-6">
+    <p class="font-mono text-[17px] text-muted md:text-xl">James Byrne :: Byrnecodes</p>
+    <h1 class="hero-title">Web apps, iPhone apps, and the payments that keep them earning.</h1>
+    <p class="max-w-[560px] text-[17px] leading-[1.6] text-pretty text-muted md:text-[19px]">I’m a full-stack developer. Ember and Rails for ambitious web apps, Swift and SwiftUI for native iPhone and Apple Watch apps, and a lot of time spent making sure money moves correctly.</p>
+    <div class="flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:gap-3">
+      <a href="mailto:{{ site.email }}?Subject=Hi!" class="btn-primary btn-lg">Start a project</a>
+      <a href="#work" class="btn-ghost">See the work</a>
+    </div>
+    {%- if site.availability and site.availability != "" %}
+    <p data-availability class="flex items-center gap-2 text-sm text-muted"><span class="size-2 flex-none rounded-full bg-ok" aria-hidden="true"></span>{{ site.availability }}</p>
+    {%- endif %}
   </div>
-  <img src="assets/img/b-hex.svg" class="absolute bottom-0 w-64 -right-7 xl:right-0 md:h-full md:w-auto" />
-</div>
-
-<hr class="m-0 border-t border-black" />
+  {% include honeycomb.html %}
+</section>
 
 <div class="max-w-5xl mx-auto my-12">
   <div class="flex flex-col md:flex-row">
