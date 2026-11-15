@@ -133,3 +133,10 @@ test('Bogha and Perry Oil cards show their screenshots with alt text', () => {
     assert.ok(img.getAttribute('alt').length > 10, cards[i].querySelector('h3').textContent);
   }
 });
+
+test('home images declare their size so the page does not shift', () => {
+  for (const img of home.querySelectorAll('main img')) {
+    assert.match(img.getAttribute('width') ?? '', /^\d+$/, img.getAttribute('src'));
+    assert.match(img.getAttribute('height') ?? '', /^\d+$/, img.getAttribute('src'));
+  }
+});

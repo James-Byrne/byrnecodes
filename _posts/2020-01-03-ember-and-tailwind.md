@@ -6,12 +6,15 @@ image: /assets/img/social/ember-and-tailwind.png
 topics: [Ember, CSS]
 thumbnail: "/assets/img/blog-posts/ember-and-tailwind/thumbnail.png"
 smallBackdropImage: "true"
-description: "Have you heard how awesome tailwindcss and ember are together!?"
+description: "How to add Tailwind CSS to an Ember app: what utility-first CSS means, a worked button example, and the PostCSS setup that wires it in."
 ---
+
+> Update, November 2026: this post was written for Tailwind CSS v1 and an Ember 3 app. Tailwind’s setup has changed a lot since, so check the [current Tailwind docs](https://tailwindcss.com/docs/installation) before following the steps below.
+
 
 ## Using tailwindcss
 
-For the last year or more, both in work and at home, I've been using [tailwindcss](tailwindcss.com) for styling. I love composing styles together with css utility classes to create great User Interfaces (UI) & User Experiences (UX). Overall I've found it great and its functional/compositional nature really gels with me.
+For the last year or more, both in work and at home, I've been using [tailwindcss](https://tailwindcss.com) for styling. I love composing styles together with css utility classes to create great User Interfaces (UI) & User Experiences (UX). Overall I've found it great and its functional/compositional nature really gels with me.
 
 > I also love its component system as well! Reducing the number of abstractions to be made up front is a godsend for any project growing quickly.
 {: .pull}
@@ -29,7 +32,7 @@ Ok for those of you that haven't worked with it yet, tailwindcss is a [utility-f
 ```
 
 <div class="flex justify-center my-6">
-  <img src="/assets/img/blog-posts/ember-and-tailwind/simple-button-step-1.png" alt="A pink button reading Press ME!" />
+  <img src="/assets/img/blog-posts/ember-and-tailwind/simple-button-step-1.png" width="1440" height="790" alt="A pink button reading Press ME!" />
 </div>
 
 Now the classes here are pretty self explanatory but let's go through them anyway.
@@ -47,7 +50,7 @@ Simple enough right? But it's not really a nice looking button yet. For one the 
 ```
 
 <div class="flex justify-center my-6">
-  <img src="/assets/img/blog-posts/ember-and-tailwind/simple-button-step-2.png" alt="The pink Press ME! button with padding, rounded corners and a shadow" />
+  <img src="/assets/img/blog-posts/ember-and-tailwind/simple-button-step-2.png" width="1440" height="790" alt="The pink Press ME! button with padding, rounded corners and a shadow" />
 </div>
 
 Much better! See how easy it is to update the styles of a component, no other files, picking colours or shadows. Just sensible, configurable defaults. I'll do the same as above and go through what we've added just to be sure we're all on the same page too.
@@ -69,7 +72,7 @@ Ok cool, but it's kinda boring right? You hover over it and nothing happens. Wha
 ```
 
 <div class="flex justify-center my-6">
-  <img src="/assets/img/blog-posts/ember-and-tailwind/button-hover.gif" alt="The pink button darkening and its shadow growing on hover" />
+  <img src="/assets/img/blog-posts/ember-and-tailwind/button-hover.gif" width="192" height="122" alt="The pink button darkening and its shadow growing on hover" />
 </div>
 
 I'm going to take it you get the gist by now. By using these small independent classes we can specify good looking and complex designs  without having to worry about writing our own styles. This has a huge impact when creating mocks UIs and helps set a standard set of classes for growing or already large projects.
@@ -80,7 +83,7 @@ Ok now that I have you sold on how awesome tailwindcss is let's add it to your e
 
 ## Adding tailwindcss to an ember app
 
-Previously we could install the library using `ember-cli-tailwind` by the great people at [embermap](embermap.com) but it has been deprecated in favour of another package. While more configurable and undoubtably	better there is a little more setup involved and since I use it _a lot_ I wanted to write a small guide on adding it to your projects.
+Previously we could install the library using `ember-cli-tailwind` by the great people at [embermap](https://embermap.com) but it has been deprecated in favour of another package. While more configurable and undoubtably	better there is a little more setup involved and since I use it _a lot_ I wanted to write a small guide on adding it to your projects.
 
 So this post covers how we can get an ember app up and running with tailwind but if your pretty comfortable with embers basics you can check out the excellent documentation on the github page [here](https://github.com/chrism/emberjs-tailwind-purgecss).
 
@@ -116,7 +119,7 @@ Now before we dive into setting up tailwind let's first create a small example t
 Now to get our ember app up and running we need to run `ember serve`. Once that's finished building visit `localhost:4200` in your browser. You should see the following beautiful button.
 
 <div class="flex justify-center my-6">
-  <img src="/assets/img/blog-posts/ember-and-tailwind/plain-button.png" alt="Unstyled text reading A beautiful button!" />
+  <img src="/assets/img/blog-posts/ember-and-tailwind/plain-button.png" width="276" height="44" alt="Unstyled text reading A beautiful button!" />
 </div>
 
 ..... anyway on with the tutorial!
@@ -197,7 +200,7 @@ The last step is to create a new css file and ensure that the tailwind css is in
 Awesome! Now we can restart our app (running `ember serve`) and we should have a styled application! Our template should look like the below image.
 
 <div class="flex justify-center my-6">
-  <img src="/assets/img/blog-posts/ember-and-tailwind/finished-button.png" alt="A green rounded button reading A beautiful button! on a pale background" />
+  <img src="/assets/img/blog-posts/ember-and-tailwind/finished-button.png" width="1440" height="790" alt="A green rounded button reading A beautiful button! on a pale background" />
 </div>
 
 That's a bit better 😄.

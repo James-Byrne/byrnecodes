@@ -10,7 +10,10 @@ const text = (el) => el.textContent.replace(/\s+/g, ' ').trim();
 test('title block', () => {
   assert.equal(tw.querySelectorAll('h1').length, 1);
   assert.equal(tw.querySelector('h1').textContent.trim(), 'Ember and tailwindcss');
-  assert.equal(tw.querySelector('.post-dek').textContent.trim(), 'Have you heard how awesome tailwindcss and ember are together!?');
+  assert.equal(
+    tw.querySelector('.post-dek').textContent.trim(),
+    tw.querySelector('meta[name="description"]').getAttribute('content'),
+  );
   assert.match(text(tw.querySelector('.post-meta')), /^3 January 2020 · Ember · CSS · \d+ min read$/);
   assert.equal(tw.querySelector('a[href="/#writing"]:not([data-num])').textContent.trim(), '← All writing');
 });
@@ -72,7 +75,42 @@ test('possessive "its" typos are fixed and "it is" contractions kept', () => {
   assert.ok(prose.includes('its functional/compositional nature'));
   assert.ok(prose.includes('I also love its component system'));
   assert.ok(prose.includes('But it’s not really a nice looking button yet'));
-  assert.equal(re.querySelector('.post-dek').textContent.trim(), 'My thoughts on Ember, its strengths and where I hope they goes next');
+});
+
+test('descriptions say what each post covers, at search-snippet length', () => {
+  for (const d of [tw, ty, re]) {
+    const description = d.querySelector('meta[name="description"]').getAttribute('content');
+    assert.ok(description.length >= 120 && description.length <= 160, `${description.length}: ${description}`);
+    assert.ok(!/!\?|they goes/.test(description), description);
+  }
+});
+
+test('prose links are absolute or site-relative', () => {
+  for (const d of [tw, ty, re])
+    for (const a of d.querySelectorAll('.prose a[href]'))
+      assert.match(a.getAttribute('href'), /^(https?:\/\/|\/|#|mailto:)/, a.getAttribute('href'));
+});
+
+test('the dead Octane article link points at its archived copy', () => {
+  assert.ok(
+    ty.querySelector(
+      '.prose a[href="https://web.archive.org/web/20220331122851/https://www.pzuraq.com/coming-soon-in-ember-octane-part-1-native-classes/"]',
+    ),
+  );
+});
+
+test('post images declare their size so the page does not shift', () => {
+  for (const d of [tw, ty, re])
+    for (const img of d.querySelectorAll('.prose img')) {
+      assert.match(img.getAttribute('width') ?? '', /^\d+$/, img.getAttribute('src'));
+      assert.match(img.getAttribute('height') ?? '', /^\d+$/, img.getAttribute('src'));
+    }
+});
+
+test('the tailwind post opens with a dated note that it is out of date', () => {
+  const first = tw.querySelector('.prose').firstElementChild;
+  assert.equal(first.tagName, 'BLOCKQUOTE');
+  assert.match(text(first), /^Update, November 2026: this post was written for Tailwind CSS v1/);
 });
 
 test('reading time counts words, not markup', () => {

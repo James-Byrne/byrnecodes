@@ -5,7 +5,7 @@ backdrop: "/assets/img/blog-posts/ember-retro/backdrop.jpg"
 image: /assets/img/social/ember-a-retrospective.png
 topics: [Ember]
 thumbnail: "/assets/img/blog-posts/ember-retro/thumbnail.jpg"
-description: "My thoughts on Ember, its strengths and where I hope they goes next"
+description: "What I like about Ember after years of building with it, from its conventions and tooling to its community and PWA story, and what I’d change."
 ---
 
   I’ve been programming professionally for a while now, with some Elixir, Erlang and Ruby with a brief stint of contracting with Angular 4 thrown in. Ergo I thought with my new found knowledge why not write some of it down so people on the internet could tell me I’m wrong! ……. wait.

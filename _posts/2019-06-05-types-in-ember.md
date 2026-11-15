@@ -5,21 +5,21 @@ backdrop: "/assets/img/blog-posts/types-in-ember/backdrop.jpg"
 image: /assets/img/social/types-in-ember.png
 topics: [Ember, TypeScript]
 thumbnail: "/assets/img/blog-posts/types-in-ember/thumbnail.jpg"
-description: "So you’ve decided to look into adding Typescript to your Ember project"
+description: "Thinking of adding TypeScript to an Ember app? The real benefits of static typing, the costs that come with them, and how to make the move."
 ---
 
 So you’ve decided to add Typescript to your Ember project. You’ve heard all about the benefits of Static Typing and how it will deliver a more maintainable codebase than plain ol’ javascript (couldn’t be that hard right?).
 
 Well before you dive in head first there are a few points I’d recommend you consider. After all, this is a change to your underlying programming language (yes I know it’s a superset and more on that later) so some pros and cons are to be expected. But to start of positive, let’s look at some of the upsides first.
 
-> Note I will not be discussing Classes or decorators much in this doc, if you want an intro to them I highly recommend [this post](https://www.pzuraq.com/coming-soon-in-ember-octane-part-1-native-classes/) by [pzuraq](https://www.pzuraq.com).
+> Note I will not be discussing Classes or decorators much in this doc, if you want an intro to them I highly recommend [this post](https://web.archive.org/web/20220331122851/https://www.pzuraq.com/coming-soon-in-ember-octane-part-1-native-classes/) by [pzuraq](https://www.pzuraq.com).
 
 
 ## The Good
 ### The Benefits of Static Typing
 
 <div class="flex justify-center my-6">
-  <img src="/assets/img/blog-posts/types-in-ember/meme.jpg" alt="Godfather meme: you come to me at runtime to tell me the code you are executing does not compile" />
+  <img src="/assets/img/blog-posts/types-in-ember/meme.jpg" width="375" height="458" alt="Godfather meme: you come to me at runtime to tell me the code you are executing does not compile" />
 </div>
 
 > This is now my favourite meme ever
