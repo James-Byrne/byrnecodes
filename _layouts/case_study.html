@@ -1,0 +1,28 @@
+---
+layout: default
+---
+<main>
+  <article class="case">
+    <a href="/#work" class="case-back">← All work</a>
+    <header class="case-head">
+      <p class="case-meta">{{ page.meta | escape }}</p>
+      <h1 class="post-title">{{ page.title | escape }}</h1>
+      <p class="case-dek">{{ page.description | escape }}</p>
+    </header>
+    <img class="case-image" src="{{ page.hero }}" alt="{{ page.hero_alt | escape }}" width="1600" height="1200">
+    <dl class="case-facts">
+      {%- for fact in page.facts %}
+      <div><dt>{{ fact.label | escape }}</dt><dd>{{ fact.value | escape }}</dd></div>
+      {%- endfor %}
+    </dl>
+    <div class="prose">
+      {{ content }}
+    </div>
+    <div class="case-cta">
+      <a href="mailto:{{ site.email }}?Subject=Hi!" class="btn-primary btn-lg">Start a similar project</a>
+      {%- if page.url_external %}
+      <a href="{{ page.url_external }}" class="btn-ghost" rel="noopener">Visit the live site</a>
+      {%- endif %}
+    </div>
+  </article>
+</main>

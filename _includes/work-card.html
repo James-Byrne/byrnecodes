@@ -9,7 +9,13 @@
   <h3>{{ item.title | escape }}</h3>
   <p class="work-body">{{ item.body | escape }}</p>
 {%- endcapture -%}
-{%- if item.url -%}
+{%- assign case_study = nil -%}
+{%- if item.case_study -%}
+  {%- assign case_study = site.pages | where: "url", item.case_study | first -%}
+{%- endif -%}
+{%- if case_study -%}
+<a class="work-card" href="{{ case_study.url }}">{{ inner }}</a>
+{%- elsif item.url -%}
 <a class="work-card" href="{{ item.url }}" rel="noopener">{{ inner }}</a>
 {%- else -%}
 <article class="work-card">{{ inner }}</article>

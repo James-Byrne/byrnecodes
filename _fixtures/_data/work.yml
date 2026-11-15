@@ -16,3 +16,9 @@
   meta: Fixture · 2026
   body: A fixture work item with no image.
   tile: ink
+
+- title: Case study fixture
+  meta: Fixture · 2026
+  body: A fixture work item whose case study page is published in the variant build.
+  tile: tile
+  case_study: /work/bogha/
