@@ -1,6 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { css, exists } from './helpers.mjs';
+import { existsSync, readdirSync } from 'node:fs';
+import { allHtml, css, exists } from './helpers.mjs';
 
 test('css is built and includes utilities used inside posts', () => {
   assert.ok(exists('assets/css/style.css'));
@@ -18,6 +19,12 @@ test('old post URLs keep their output paths', () => {
 });
 
 test('build-only files are not published', () => {
-  for (const p of ['docs', 'test', 'src', 'tmp', 'scripts', '_fixtures', '2026', 'gulpfile.babel.js', 'package.json', 'netlify.toml', 'README.md', 'mise.toml'])
+  for (const p of ['docs', 'test', 'src', 'tmp', 'scripts', '_fixtures', 'gulpfile.babel.js', 'package.json', 'netlify.toml', 'README.md', 'mise.toml'])
     assert.ok(!exists(p), p);
+});
+
+test('drafts are not published', () => {
+  const drafts = existsSync('_drafts') ? readdirSync('_drafts').map((f) => f.replace(/\.md$/, '')) : [];
+  const published = allHtml().map((p) => p.replace(/\.html$/, '').split('/').pop());
+  for (const d of drafts) assert.ok(!published.includes(d), d);
 });

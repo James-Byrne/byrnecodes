@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360" font-family="Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <defs>
+    <marker id="head-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2D3748"/>
+    </marker>
+    <marker id="head-accent" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#C8432D"/>
+    </marker>
+    <mask id="holes" maskUnits="userSpaceOnUse" x="0" y="0" width="640" height="360">
+      <rect width="640" height="360" fill="#fff"/>
+      <g fill="#000">
+        <ellipse cx="157" cy="92" rx="4" ry="6" transform="rotate(-24 157 92)"/>
+        <ellipse cx="151" cy="160" rx="10" ry="15" transform="rotate(-24 151 160)"/>
+        <ellipse cx="153" cy="206" rx="14" ry="20" transform="rotate(-24 153 206)"/>
+        <ellipse cx="151" cy="250" rx="11" ry="16" transform="rotate(-24 151 250)"/>
+        <ellipse cx="238" cy="108" rx="9" ry="13" transform="rotate(-24 238 108)"/>
+        <ellipse cx="245" cy="203" rx="13" ry="19" transform="rotate(-24 245 203)"/>
+        <ellipse cx="243" cy="251" rx="9" ry="14" transform="rotate(-24 243 251)"/>
+        <ellipse cx="330" cy="100" rx="8" ry="11" transform="rotate(-24 330 100)"/>
+        <ellipse cx="340" cy="140" rx="5" ry="7" transform="rotate(-24 340 140)"/>
+        <ellipse cx="334" cy="206" rx="15" ry="21" transform="rotate(-24 334 206)"/>
+        <ellipse cx="337" cy="250" rx="10" ry="15" transform="rotate(-24 337 250)"/>
+        <ellipse cx="424" cy="112" rx="10" ry="14" transform="rotate(-24 424 112)"/>
+        <ellipse cx="433" cy="168" rx="5" ry="7" transform="rotate(-24 433 168)"/>
+        <ellipse cx="427" cy="250" rx="14" ry="19" transform="rotate(-24 427 250)"/>
+        <ellipse cx="522" cy="85" rx="5" ry="7" transform="rotate(-24 522 85)"/>
+        <ellipse cx="516" cy="130" rx="8" ry="12" transform="rotate(-24 516 130)"/>
+        <ellipse cx="524" cy="190" rx="4" ry="6" transform="rotate(-24 524 190)"/>
+        <ellipse cx="521" cy="249" rx="11" ry="17" transform="rotate(-24 521 249)"/>
+      </g>
+    </mask>
+  </defs>
+
+  <text x="20" y="95" font-size="17" fill="#4A5568">Mistakes</text>
+
+  <g stroke-width="2.5" fill="none" stroke-linecap="round">
+    <path d="M20,115 H124" stroke="#2D3748" marker-end="url(#head-ink)"/>
+    <path d="M20,160 H216" stroke="#2D3748" marker-end="url(#head-ink)"/>
+    <path d="M20,205 H400" stroke="#2D3748" marker-end="url(#head-ink)"/>
+    <path d="M20,250 H612" stroke="#C8432D" stroke-width="3" marker-end="url(#head-accent)"/>
+  </g>
+
+  <g mask="url(#holes)" fill="#F6DC8C" stroke="#C9A23F" stroke-width="1.5" stroke-linejoin="round">
+    <path d="M130,70 L174,50 L174,270 L130,290 Z"/>
+    <path d="M222,70 L266,50 L266,270 L222,290 Z"/>
+    <path d="M314,70 L358,50 L358,270 L314,290 Z"/>
+    <path d="M406,70 L450,50 L450,270 L406,290 Z"/>
+    <path d="M498,70 L542,50 L542,270 L498,290 Z"/>
+  </g>
+
+  <g fill="none" stroke="#B8902F" stroke-width="1.5">
+    <ellipse cx="157" cy="92" rx="4" ry="6" transform="rotate(-24 157 92)"/>
+    <ellipse cx="151" cy="160" rx="10" ry="15" transform="rotate(-24 151 160)"/>
+    <ellipse cx="153" cy="206" rx="14" ry="20" transform="rotate(-24 153 206)"/>
+    <ellipse cx="151" cy="250" rx="11" ry="16" transform="rotate(-24 151 250)"/>
+    <ellipse cx="238" cy="108" rx="9" ry="13" transform="rotate(-24 238 108)"/>
+    <ellipse cx="245" cy="203" rx="13" ry="19" transform="rotate(-24 245 203)"/>
+    <ellipse cx="243" cy="251" rx="9" ry="14" transform="rotate(-24 243 251)"/>
+    <ellipse cx="330" cy="100" rx="8" ry="11" transform="rotate(-24 330 100)"/>
+    <ellipse cx="340" cy="140" rx="5" ry="7" transform="rotate(-24 340 140)"/>
+    <ellipse cx="334" cy="206" rx="15" ry="21" transform="rotate(-24 334 206)"/>
+    <ellipse cx="337" cy="250" rx="10" ry="15" transform="rotate(-24 337 250)"/>
+    <ellipse cx="424" cy="112" rx="10" ry="14" transform="rotate(-24 424 112)"/>
+    <ellipse cx="433" cy="168" rx="5" ry="7" transform="rotate(-24 433 168)"/>
+    <ellipse cx="427" cy="250" rx="14" ry="19" transform="rotate(-24 427 250)"/>
+    <ellipse cx="522" cy="85" rx="5" ry="7" transform="rotate(-24 522 85)"/>
+    <ellipse cx="516" cy="130" rx="8" ry="12" transform="rotate(-24 516 130)"/>
+    <ellipse cx="524" cy="190" rx="4" ry="6" transform="rotate(-24 524 190)"/>
+    <ellipse cx="521" cy="249" rx="11" ry="17" transform="rotate(-24 521 249)"/>
+  </g>
+
+  <text x="572" y="236" font-size="17" font-weight="600" fill="#B23A24">Ships</text>
+
+  <g text-anchor="middle">
+    <g font-family="'Ubuntu Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" fill="#4A5568">
+      <text x="152" y="318">1</text>
+      <text x="244" y="318">2</text>
+      <text x="336" y="318">3</text>
+      <text x="428" y="318">4</text>
+      <text x="520" y="318">5</text>
+    </g>
+    <g font-size="18" fill="#1A202C">
+      <text x="152" y="342">Card &amp; plan</text>
+      <text x="244" y="342">Hook</text>
+      <text x="336" y="342">Review</text>
+      <text x="428" y="342">Simulator</text>
+      <text x="520" y="342">Me</text>
+    </g>
+  </g>
+</svg>

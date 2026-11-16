@@ -87,11 +87,11 @@ test('writing lists real posts newest first with month dates', () => {
   const links = [...home.querySelectorAll('.writing-list a')];
   assert.deepEqual(
     links.map((a) => a.getAttribute('href')),
-    ['/2020/01/03/ember-and-tailwind', '/2019/06/05/types-in-ember', '/2018/07/18/ember-a-retrospective'],
+    ['/2026/11/16/test-first-delivery-with-ai-agents', '/2020/01/03/ember-and-tailwind', '/2019/06/05/types-in-ember', '/2018/07/18/ember-a-retrospective'],
   );
   assert.deepEqual(
     links.map((a) => a.querySelector('.date').textContent.trim()),
-    ['Jan 2020', 'Jun 2019', 'Jul 2018'],
+    ['Nov 2026', 'Jan 2020', 'Jun 2019', 'Jul 2018'],
   );
   assert.ok(links[0].classList.contains('is-newest'));
 });

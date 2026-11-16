@@ -53,7 +53,10 @@ test('code is highlighted with the dark theme', () => {
 test('author aside and older/newer', () => {
   assert.equal(tw.querySelector('aside[aria-label="About the author"] img').getAttribute('alt'), 'James Byrne');
   assert.equal(tw.querySelector('a.post-older').getAttribute('href'), '/2019/06/05/types-in-ember');
-  assert.equal(tw.querySelector('a.post-newer'), null);
+  assert.equal(tw.querySelector('a.post-newer').getAttribute('href'), '/2026/11/16/test-first-delivery-with-ai-agents');
+  const newest = page('2026/11/16/test-first-delivery-with-ai-agents.html');
+  assert.equal(newest.querySelector('a.post-older').getAttribute('href'), '/2020/01/03/ember-and-tailwind');
+  assert.equal(newest.querySelector('a.post-newer'), null);
   assert.equal(re.querySelector('a.post-older'), null);
   assert.equal(re.querySelector('a.post-newer').getAttribute('href'), '/2019/06/05/types-in-ember');
 });
