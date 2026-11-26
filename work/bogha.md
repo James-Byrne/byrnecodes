@@ -7,7 +7,7 @@ description: "An archery training app for iPhone and Apple Watch, built in Swift
 meta: iOS · watchOS · own product · 2026
 image: /assets/img/social/bogha.png
 hero: /assets/img/work/bogha.jpg
-hero_alt: "Three Bogha iPhone screens: the entries list, a live WA 18m scorecard and the weekly progress chart"
+hero_alt: "Three Bogha iPhone screens: a live WA 18m scorecard, the entries list and the weekly progress chart"
 facts:
   - label: Role
     value: Design, build and ship, solo

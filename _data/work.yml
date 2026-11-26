@@ -4,7 +4,7 @@
   body: "An archery training app for iPhone and Apple Watch: scoring, equipment setups, training plans, video, and voice notes summarised on-device."
   tile: ink
   image: /assets/img/work/bogha.jpg
-  image_alt: "Three Bogha iPhone screens: the entries list, a live WA 18m scorecard and the weekly progress chart"
+  image_alt: "Three Bogha iPhone screens: a live WA 18m scorecard, the entries list and the weekly progress chart"
 
 - title: Ticketing platform
   case_study: /work/ticketing-platform/
